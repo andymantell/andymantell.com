@@ -10,5 +10,10 @@
   "author": "Andy Mantell",
   "license": "BSD",
   "readmeFilename": "README.md",
-  "gitHead": "3e21e8f4930c3f8d083ca06cbff3de70436f772e"
+  "gitHead": "3e21e8f4930c3f8d083ca06cbff3de70436f772e",
+  "devDependencies": {
+    "assemble": "~0.3.31",
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.3.1"
+  }
 }
