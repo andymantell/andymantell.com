@@ -1,0 +1,14 @@
+{
+  "name": "andymantell.com",
+  "version": "0.1.0",
+  "description": "andymantell.com\r ===============",
+  "main": "public/index.html",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andymantell/andymantell.com.git"
+  },
+  "author": "Andy Mantell",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "3e21e8f4930c3f8d083ca06cbff3de70436f772e"
+}
