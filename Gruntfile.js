@@ -18,14 +18,13 @@ module.exports = function(grunt) {
 
     watch: {
       scss: {
-        files: 'src/assets/**/*.scss',
+        files: 'assets/**/*.scss',
         tasks: ['compass']
       },
 
       build: {
         files: [
-          'src/**/*.*',
-          '!src/assets/**/*.*'
+          'jekyll/**/*.*'
         ],
         tasks: ['jekyll', 'compass']
       }

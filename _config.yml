@@ -1,6 +1,7 @@
 name: Andy Mantell
-pygments: false
-source: src
+pygments: true
+source: jekyll
 destination: ../dist
 exclude: [ assets ]
 include: [ .nojekyll ]
+permalink: /blog/:year/:month/:day/:title/

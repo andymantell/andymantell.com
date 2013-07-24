@@ -1,0 +1,16 @@
+---
+layout: default
+title:  "Another page"
+date:   2013-07-24 10:56:14
+permalink: /
+
+navigation:
+  title: Menu title different from page title
+  weight: 2
+  show: true
+---
+
+{% capture content %}{% include content/another-test.md %}{% endcapture %}
+{{ content | markdownify }}
+
+

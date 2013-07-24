@@ -1,0 +1,16 @@
+---
+layout: default
+title:  "This is a test page"
+date:   2013-07-24 10:56:14
+permalink: /
+
+navigation:
+  title: Foo
+  weight: 1
+  show: true
+---
+
+{% capture content %}{% include content/test.md %}{% endcapture %}
+{{ content | markdownify }}
+
+
