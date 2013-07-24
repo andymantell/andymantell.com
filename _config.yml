@@ -3,3 +3,4 @@ pygments: false
 source: src
 destination: ../dist
 exclude: [ assets ]
+include: [ .nojekyll ]
