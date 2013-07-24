@@ -1,8 +1,8 @@
 http_path = "/"
-css_dir = "public/ui/css"
-sass_dir = "public/ui/scss"
-images_dir = "public/ui/img"
-javascripts_dir = "public/ui/js"
+css_dir = "dist/assets/css"
+sass_dir = "src/assets/scss"
+images_dir = "src/assets/images"
+generated_images_dir = "dist/assets/images"
 
 output_style = :compressed
 

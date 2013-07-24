@@ -6,6 +6,7 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
+
     compass: {
       dist: {
         options: {
@@ -16,7 +17,7 @@ module.exports = function(grunt) {
 
     watch: {
       scss: {
-        files: 'public/ui/**/*.scss',
+        files: 'src/assets/**/*.scss',
         tasks: ['compass']
       }
     }
