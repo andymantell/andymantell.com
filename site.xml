@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<site>
+  <page title="Foo" path="/">
+    <region name="content">
+      <p>Foo</p>
+    </region>
+  </page>
+
+  <page title="About" path="about/">
+    <region name="content">
+      <p>Rawr</p>
+    </region>
+  </page>
+</site>

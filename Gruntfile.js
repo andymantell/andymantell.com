@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
-  grunt.loadNpmTasks('grunt-jekyll');
+  grunt.loadNpmTasks('grunt-exec');
 
   // Project configuration.
   grunt.initConfig({
@@ -24,22 +24,23 @@ module.exports = function(grunt) {
 
       build: {
         files: [
-          'jekyll/**/*.*'
+          'site.*'
         ],
-        tasks: ['jekyll', 'compass']
+        tasks: ['build']
       }
     },
 
-    jekyll: {
-      dist: {
-        config: '_config.yml'
+    exec: {
+      transform: {
+        cmd: 'xsltproc --stringparam outputpath ../dist/ site.xslt site.xml'
       }
     }
   });
 
   // Default task.
-  grunt.registerTask('default', ['jekyll', 'compass']);
+  grunt.registerTask('default', ['exec:transform', 'compass']);
 
-  grunt.registerTask('scss', ['compass']);
+  // Build
+  grunt.registerTask('build', ['exec:transform']);
 
 };

@@ -1,7 +1,0 @@
-name: Andy Mantell
-pygments: true
-source: jekyll
-destination: ../dist
-exclude: [ assets ]
-include: [ .nojekyll ]
-permalink: /blog/:year/:month/:day/:title/
