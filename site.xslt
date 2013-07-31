@@ -10,7 +10,7 @@
   <xsl:param name="outputpath" />
 
   <xsl:template match="page">
-    <exsl:document href="{$outputpath}{@path}/index.html">
+    <exsl:document href="{$outputpath}{@path}/index.html" method="xml" omit-xml-declaration="yes" indent="yes">
       <html>
         <body>
           <h1><xsl:value-of select="@title"/></h1>
