@@ -27,7 +27,8 @@ module.exports = function(grunt) {
 
       build: {
         files: [
-          'site.*'
+          'xml/**/*.*',
+          'xslt/**/*.*'
         ],
         tasks: ['build']
       }
@@ -53,7 +54,7 @@ module.exports = function(grunt) {
 
     exec: {
       transform: {
-        cmd: 'xsltproc --stringparam outputpath dist/ site.xslt site.xml'
+        cmd: 'xsltproc --stringparam outputpath dist/ xslt/site.xslt xml/site.xml'
       },
       clean: {
         cmd: 'find dist -mindepth 1 -and \\( \\( -name "assets" \\) -prune -or -prune -exec rm -rfv "\{\}" \\; \\)'
