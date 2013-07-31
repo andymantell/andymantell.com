@@ -4,7 +4,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-exec');
-  grunt.loadNpmTasks('grunt-awssum-deploy');
+  grunt.loadNpmTasks('grunt-aws');
 
   // Project configuration.
   grunt.initConfig({
@@ -34,21 +34,23 @@ module.exports = function(grunt) {
       }
     },
 
-    s3deploy: {
+    aws: {
       options: {
-        key: '<%= awsSettings.accessKeyId %>',
-        secret: '<%= awsSettings.secretAccessKey %>',
-        bucket: '<%= awsSettings.bucket %>',
-        access: 'public-read',
-        connections: 5
+        config: {
+          accessKeyId: '<%= awsSettings.accessKeyId %>',
+          secretAccessKey: '<%= awsSettings.secretAccessKey %>',
+        }
       },
-      dist: {
-        files: [{
-          expand: true,
-          cwd: 'dist/',
-          src: '**/*.*',
-          dest: './'
-        }]
+      deploy: {
+        service: 's3',
+        options: {
+          bucket: '<%= awsSettings.bucket %>',
+          access: 'public-read',
+          root: '/',
+          endpoint: 's3-eu-west-1.amazonaws.com'
+        },
+        del: ['**/*.*'],
+        put: ['dist/**/*.*']
       }
     },
 
@@ -58,6 +60,9 @@ module.exports = function(grunt) {
       },
       clean: {
         cmd: 'find dist -mindepth 1 -and \\( \\( -name "assets" \\) -prune -or -prune -exec rm -rfv "\{\}" \\; \\)'
+      },
+      logpaths: {
+        cmd: 'echo "Output structure:"; ls dist/* -R | grep ":$" | sed -e \'s/:$//\' -e \'s/[^-][^\\/]*\\//--/g\' -e \'s/^/   /\' -e \'s/-/|/\''
       }
     }
   });
@@ -66,9 +71,9 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['exec:clean', 'exec:transform', 'compass']);
 
   // Build
-  grunt.registerTask('build', ['exec:clean', 'exec:transform']);
+  grunt.registerTask('build', ['exec:clean', 'exec:transform', 'exec:logpaths']);
 
   // Deploy
-  grunt.registerTask('deploy', ['s3deploy:dist']);
+  grunt.registerTask('deploy', ['aws:deploy']);
 
 };
