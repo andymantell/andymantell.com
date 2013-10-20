@@ -4,3 +4,5 @@
 /.sass-cache
 /dist
 /aws.json
+/xml/recent_tweets.xml
+/twitter.json

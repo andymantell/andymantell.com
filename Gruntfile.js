@@ -4,12 +4,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-exec');
-  grunt.loadNpmTasks('grunt-aws');
+  grunt.loadNpmTasks('grunt-s3');
 
   // Project configuration.
   grunt.initConfig({
 
-    awsSettings: grunt.file.readJSON('aws.json'),
+    aws: grunt.file.readJSON('aws.json'),
+    twitter: grunt.file.readJSON('twitter.json'),
 
     compass: {
       dist: {
@@ -34,23 +35,23 @@ module.exports = function(grunt) {
       }
     },
 
-    aws: {
+    s3: {
       options: {
-        config: {
-          accessKeyId: '<%= awsSettings.accessKeyId %>',
-          secretAccessKey: '<%= awsSettings.secretAccessKey %>',
-        }
+        key: '<%= aws.accessKeyId %>',
+        secret: '<%= aws.secretAccessKey %>',
+        bucket: '<%= aws.bucket %>',
+        access: 'public-read'
       },
-      deploy: {
-        service: 's3',
-        options: {
-          bucket: '<%= awsSettings.bucket %>',
-          access: 'public-read',
-          root: '/',
-          endpoint: 's3-eu-west-1.amazonaws.com'
-        },
-        del: ['**/*.*'],
-        put: ['dist/**/*.*']
+      dist: {
+        del: [{
+          src: '*.*'
+        }],
+        upload: [{
+          expand: true,
+          src: 'dist/**/*.*',
+          dest: './',
+          rel: 'dist'
+        }]
       }
     },
 
@@ -67,13 +68,46 @@ module.exports = function(grunt) {
     }
   });
 
+  grunt.registerTask('get_tweets', 'Get tweets', function () {
+    var util = require('util'),
+    twitter = require('twitter-1.1');
+
+    var jsontoxml = require("jsontoxml");
+
+    var done = this.async();
+
+    var twit = new twitter(grunt.config.data.twitter);
+
+    twit.get('/statuses/user_timeline.json', {screen_name: "andymantell", count: 3}, function(data) {
+
+      var recent_tweets = {
+        recent_tweets: []
+      };
+
+      data.forEach(function(item) {
+        recent_tweets.recent_tweets.push({tweet: item});
+      });
+
+      var fs = require('fs');
+      fs.writeFile("xml/recent_tweets.xml", jsontoxml(recent_tweets, {prettyPrint: true, xmlHeader: true, removeIllegalNameCharacters : true}), function(err) {
+        if(err) {
+            console.log(err);
+        } else {
+            console.log("Saved tweet xml.");
+        }
+
+        done();
+      });
+    });
+  });
+
   // Default task.
   grunt.registerTask('default', ['exec:clean', 'exec:transform', 'compass']);
 
   // Build
-  grunt.registerTask('build', ['exec:clean', 'exec:transform', 'exec:logpaths']);
+  grunt.registerTask('build', ['get_tweets', 'exec:clean', 'exec:transform', 'exec:logpaths']);
 
   // Deploy
-  grunt.registerTask('deploy', ['aws:deploy']);
+  grunt.registerTask('deploy', ['s3:dist']);
 
 };

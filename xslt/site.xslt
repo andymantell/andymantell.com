@@ -7,17 +7,35 @@
   exclude-result-prefixes="exsl"
   version="1.0">
 
+  <xsl:include href="partials/html.xslt"/>
+  <xsl:include href="partials/footer.xslt"/>
+  <xsl:include href="partials/recent_tweets.xslt"/>
+
   <xsl:param name="outputpath" />
 
+  <xsl:template match="site">
+    <site>
+      <projects>
+        <xsl:apply-templates select="document('../xml/projects/jisc.xml')"/>
+        <xsl:apply-templates/>
+      </projects>
+    </site>
+  </xsl:template>
+
   <xsl:template match="page">
-    <exsl:document href="{$outputpath}{@path}/index.html" method="xml" omit-xml-declaration="yes" indent="yes">
-      <html>
-        <body>
-          <h1><xsl:value-of select="@title"/></h1>
-          <xsl:copy-of select="region[name=content]"/>
-        </body>
-      </html>
-    </exsl:document>
+    <xsl:call-template name="html">
+      <xsl:with-param name="filepath" select="@path" />
+      <xsl:with-param name="title" select="@title" />
+      <xsl:with-param name="content" select="region[name=content]" />
+    </xsl:call-template>
+  </xsl:template>
+
+  <xsl:template match="project">
+    <xsl:call-template name="html">
+      <xsl:with-param name="filepath" select="concat('projects/', @slug)" />
+      <xsl:with-param name="title" select="@title" />
+      <xsl:with-param name="content" select="region[name=content]" />
+    </xsl:call-template>
   </xsl:template>
 
 </xsl:stylesheet>
