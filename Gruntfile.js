@@ -29,7 +29,7 @@ module.exports = function(grunt) {
           'xml/**/*.*',
           'xslt/**/*.*'
         ],
-        tasks: ['build']
+        tasks: ['transform']
       }
     },
 
@@ -105,7 +105,13 @@ module.exports = function(grunt) {
   // Default task.
   grunt.registerTask('default', ['exec:clean', 'exec:transform', 'compass']);
 
+  // Fetch external data
+  grunt.registerTask('fetch', ['get_tweets', 'get_recent_tracks']);
+
+  // Transform
+  grunt.registerTask('transform', ['exec:clean', 'exec:transform', 'exec:logpaths']);
+
   // Build
-  grunt.registerTask('build', ['get_tweets', 'get_recent_tracks', 'exec:clean', 'exec:transform', 'exec:logpaths']);
+  grunt.registerTask('rebuild', ['fetch', 'transform', 'exec:logpaths']);
 
 };

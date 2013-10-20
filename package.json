@@ -13,11 +13,10 @@
   "gitHead": "3e21e8f4930c3f8d083ca06cbff3de70436f772e",
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-watch": "~0.3.1",
-    "grunt-contrib-compass": "~0.2.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-compass": "~0.6.0",
     "grunt-exec": "~0.4.2",
     "twitter-1.1": "~0.1.18",
-    "jsontoxml": "0.0.11",
-    "request": "~2.27.0"
+    "jsontoxml": "0.0.11"
   }
 }
