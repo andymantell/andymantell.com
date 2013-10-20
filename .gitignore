@@ -6,3 +6,6 @@
 /aws.json
 /xml/recent_tweets.xml
 /twitter.json
+
+/lastfm.json
+/xml/recent_tracks.xml

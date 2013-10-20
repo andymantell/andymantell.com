@@ -9,7 +9,6 @@
 
   <xsl:include href="partials/html.xslt"/>
   <xsl:include href="partials/footer.xslt"/>
-  <xsl:include href="partials/recent_tweets.xslt"/>
 
   <xsl:param name="outputpath" />
 

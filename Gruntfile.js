@@ -8,6 +8,7 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     twitter: grunt.file.readJSON('twitter.json'),
+    lastfm: grunt.file.readJSON('lastfm.json'),
 
     compass: {
       dist: {
@@ -45,6 +46,7 @@ module.exports = function(grunt) {
     }
   });
 
+  // Fetch recent tweets
   grunt.registerTask('get_tweets', 'Get tweets', function () {
     var util = require('util'),
     twitter = require('twitter-1.1');
@@ -78,10 +80,32 @@ module.exports = function(grunt) {
     });
   });
 
+  // Fetch recent tracks
+  grunt.registerTask('get_recent_tracks', 'Get recent tracks', function () {
+    var util = require('util');
+    var http = require('http')
+    var request = require("request");
+
+    var done = this.async();
+
+    request('http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=andymantell&api_key=' + grunt.config.data.lastfm.api_key, function(error, response, body) {
+      var fs = require('fs');
+      fs.writeFile("xml/recent_tracks.xml", body, function(err) {
+        if(err) {
+            console.log(err);
+        } else {
+            console.log("Saved recent tracks xml.");
+        }
+
+        done();
+      });
+    });
+  });
+
   // Default task.
   grunt.registerTask('default', ['exec:clean', 'exec:transform', 'compass']);
 
   // Build
-  grunt.registerTask('build', ['get_tweets', 'exec:clean', 'exec:transform', 'exec:logpaths']);
+  grunt.registerTask('build', ['get_tweets', 'get_recent_tracks', 'exec:clean', 'exec:transform', 'exec:logpaths']);
 
 };

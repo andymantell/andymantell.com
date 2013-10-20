@@ -7,8 +7,12 @@
   exclude-result-prefixes="exsl"
   version="1.0">
 
+  <xsl:include href="recent_tweets.xslt"/>
+  <xsl:include href="recent_tracks.xslt"/>
+
   <xsl:template name="footer">
     <xsl:call-template name="recent_tweets" />
+    <xsl:call-template name="recent_tracks" />
   </xsl:template>
 
 </xsl:stylesheet>
