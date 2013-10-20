@@ -4,12 +4,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-exec');
-  grunt.loadNpmTasks('grunt-s3');
 
   // Project configuration.
   grunt.initConfig({
-
-    aws: grunt.file.readJSON('aws.json'),
     twitter: grunt.file.readJSON('twitter.json'),
 
     compass: {
@@ -32,26 +29,6 @@ module.exports = function(grunt) {
           'xslt/**/*.*'
         ],
         tasks: ['build']
-      }
-    },
-
-    s3: {
-      options: {
-        key: '<%= aws.accessKeyId %>',
-        secret: '<%= aws.secretAccessKey %>',
-        bucket: '<%= aws.bucket %>',
-        access: 'public-read'
-      },
-      dist: {
-        del: [{
-          src: '*.*'
-        }],
-        upload: [{
-          expand: true,
-          src: 'dist/**/*.*',
-          dest: './',
-          rel: 'dist'
-        }]
       }
     },
 
@@ -106,8 +83,5 @@ module.exports = function(grunt) {
 
   // Build
   grunt.registerTask('build', ['get_tweets', 'exec:clean', 'exec:transform', 'exec:logpaths']);
-
-  // Deploy
-  grunt.registerTask('deploy', ['s3:dist']);
 
 };
