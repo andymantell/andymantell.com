@@ -17,6 +17,7 @@
     "grunt-contrib-compass": "~0.6.0",
     "grunt-exec": "~0.4.2",
     "twitter-1.1": "~0.1.18",
-    "jsontoxml": "0.0.11"
+    "jsontoxml": "0.0.11",
+    "request": "~2.27.0"
   }
 }
