@@ -8,7 +8,11 @@
   version="1.0">
 
   <xsl:include href="partials/html.xslt"/>
+  <xsl:include href="partials/main-menu.xslt"/>
   <xsl:include href="partials/footer.xslt"/>
+  <xsl:include href="partials/page-basic.xslt"/>
+  <xsl:include href="partials/page-listing.xslt"/>
+  <xsl:include href="partials/page-project.xslt"/>
 
   <xsl:param name="outputpath" />
 
@@ -16,25 +20,10 @@
     <site>
       <projects>
         <xsl:apply-templates select="document('../xml/projects/jisc.xml')"/>
+        <xsl:apply-templates select="document('../xml/projects/coull-vidlinkr.xml')"/>
         <xsl:apply-templates/>
       </projects>
     </site>
-  </xsl:template>
-
-  <xsl:template match="page">
-    <xsl:call-template name="html">
-      <xsl:with-param name="filepath" select="@path" />
-      <xsl:with-param name="title" select="@title" />
-      <xsl:with-param name="content" select="region[name=content]" />
-    </xsl:call-template>
-  </xsl:template>
-
-  <xsl:template match="project">
-    <xsl:call-template name="html">
-      <xsl:with-param name="filepath" select="concat('projects/', @slug)" />
-      <xsl:with-param name="title" select="@title" />
-      <xsl:with-param name="content" select="region[name=content]" />
-    </xsl:call-template>
   </xsl:template>
 
 </xsl:stylesheet>

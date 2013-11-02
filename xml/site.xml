@@ -1,17 +1,31 @@
 <?xml version="1.0"?>
 
 <site>
-  <page title="Foo" path="/">
+  <page title="Home" path="">
     <region name="content">
-      <p>Foo</p>
+      <p>Homepage</p>
     </region>
   </page>
 
-  <page title="About" path="about/">
+  <page title="About" path="about">
     <region name="content">
-      <p>Rawr</p>
+      <p>About page</p>
+    </region>
+
+    <page title="Child page" path="about/child/page">
+      <region name="content">
+        <p>This is a child of the about page</p>
+      </region>
+    </page>
+
+  </page>
+
+  <page title="Another page" path="another-page/here/foo/bar">
+    <region name="content">
+      <p>Another page</p>
     </region>
   </page>
 
+  <page title="Projects" path="projects" listing="project" />
 
 </site>

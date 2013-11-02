@@ -9,19 +9,32 @@
 
   <xsl:template name="html">
     <xsl:param name="filepath" />
-    <xsl:param name="title" />
-    <xsl:param name="content" />
 
-    <exsl:document href="{$outputpath}{$filepath}/index.html" method="xml" doctype="" omit-xml-declaration="yes" indent="yes">
+    <exsl:document href="{$outputpath}{$filepath}/index.html" method="html" omit-xml-declaration="yes" indent="yes">
       <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html&gt;&#xa;</xsl:text>
       <html>
+
         <head>
-          <title><xsl:value-of select="$title" /></title>
+          <title><xsl:apply-templates select="." mode="title" /></title>
         </head>
+
         <body>
-          <xsl:copy-of select="$content"/>
-          <xsl:call-template name="footer" />
+          <header role="banner">
+            <xsl:call-template name="main_menu">
+              <xsl:with-param name="current_page" select="." />
+            </xsl:call-template>
+          </header>
+
+          <main>
+            <h1><xsl:apply-templates select="." mode="title" /></h1>
+            <xsl:apply-templates select="." mode="body" />
+          </main>
+
+          <footer>
+            <xsl:call-template name="footer" />
+          </footer>
         </body>
+
       </html>
     </exsl:document>
   </xsl:template>
