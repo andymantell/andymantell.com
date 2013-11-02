@@ -21,7 +21,7 @@ module.exports = function(grunt) {
     watch: {
       scss: {
         files: 'assets/**/*.scss',
-        tasks: ['compass']
+        tasks: ['css']
       },
 
       build: {
@@ -111,7 +111,10 @@ module.exports = function(grunt) {
   // Transform
   grunt.registerTask('transform', ['exec:clean', 'exec:transform', 'exec:logpaths']);
 
+  // Compile stylesheets
+  grunt.registerTask('css', ['compass']);
+
   // Build
-  grunt.registerTask('rebuild', ['fetch', 'transform']);
+  grunt.registerTask('rebuild', ['fetch', 'transform', 'css']);
 
 };
