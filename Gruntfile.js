@@ -112,6 +112,6 @@ module.exports = function(grunt) {
   grunt.registerTask('transform', ['exec:clean', 'exec:transform', 'exec:logpaths']);
 
   // Build
-  grunt.registerTask('rebuild', ['fetch', 'transform', 'exec:logpaths']);
+  grunt.registerTask('rebuild', ['fetch', 'transform']);
 
 };

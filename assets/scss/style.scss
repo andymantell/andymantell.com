@@ -1,4 +1,10 @@
-@import "compass/css3";
+@import "breakpoint";
+@import "compass";
+@import "compass/reset";
 
 // Partials
-@import "partials/pygments";
+@import "partials/grid";
+@import "partials/layout";
+@import "partials/site-header";
+@import "partials/main-menu";
+@import "partials/site-footer";

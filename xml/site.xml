@@ -28,4 +28,6 @@
 
   <page title="Projects" path="projects" listing="project" />
 
+  <page title="Blog" path="blog" listing="blog" />
+
 </site>

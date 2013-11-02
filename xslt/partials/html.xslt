@@ -16,22 +16,29 @@
 
         <head>
           <title><xsl:apply-templates select="." mode="title" /></title>
+          <link rel="stylesheet" href="/assets/css/style.css" />
         </head>
 
         <body>
-          <header role="banner">
-            <xsl:call-template name="main_menu">
-              <xsl:with-param name="current_page" select="." />
-            </xsl:call-template>
+          <header class="site-header" role="banner">
+            <div class="inner-wrapper">
+              <xsl:call-template name="main_menu">
+                <xsl:with-param name="current_page" select="." />
+              </xsl:call-template>
+            </div>
           </header>
 
-          <main>
-            <h1><xsl:apply-templates select="." mode="title" /></h1>
-            <xsl:apply-templates select="." mode="body" />
+          <main class="main">
+            <div class="inner-wrapper">
+              <h1><xsl:apply-templates select="." mode="title" /></h1>
+              <xsl:apply-templates select="." mode="body" />
+            </div>
           </main>
 
-          <footer>
-            <xsl:call-template name="footer" />
+          <footer class="site-footer">
+            <div class="inner-wrapper">
+              <xsl:call-template name="footer" />
+            </div>
           </footer>
         </body>
 
