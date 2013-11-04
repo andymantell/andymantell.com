@@ -7,6 +7,8 @@
   exclude-result-prefixes="exsl"
   version="1.0">
 
+  <!-- Main html template -->
+  <!-- ===================================================================== -->
   <xsl:template name="html">
     <xsl:param name="filepath" />
 

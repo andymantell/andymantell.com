@@ -13,17 +13,8 @@
   <xsl:include href="partials/page-basic.xslt"/>
   <xsl:include href="partials/page-listing.xslt"/>
   <xsl:include href="partials/page-project.xslt"/>
+  <xsl:include href="partials/page-blogpost.xslt"/>
 
   <xsl:param name="outputpath" />
-
-  <xsl:template match="site">
-    <site>
-      <projects>
-        <xsl:apply-templates select="document('../xml/projects/jisc.xml')"/>
-        <xsl:apply-templates select="document('../xml/projects/coull-vidlinkr.xml')"/>
-        <xsl:apply-templates/>
-      </projects>
-    </site>
-  </xsl:template>
 
 </xsl:stylesheet>

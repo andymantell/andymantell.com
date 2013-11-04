@@ -7,10 +7,14 @@
   exclude-result-prefixes="exsl"
   version="1.0">
 
+  <!-- Recent tracks template -->
+  <!-- ===================================================================== -->
   <xsl:template name="recent_tracks">
     <xsl:apply-templates select="document('../../xml/recent_tracks.xml')"/>
   </xsl:template>
 
+  <!-- Recent tracks: individual track -->
+  <!-- ===================================================================== -->
   <xsl:template match="lfm/recenttracks/track">
     <p>
       <xsl:value-of select="artist" />: <xsl:value-of select="name" />

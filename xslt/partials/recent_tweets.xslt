@@ -7,10 +7,14 @@
   exclude-result-prefixes="exsl"
   version="1.0">
 
+  <!-- Recent tweets template -->
+  <!-- ===================================================================== -->
   <xsl:template name="recent_tweets">
     <xsl:apply-templates select="document('../../xml/recent_tweets.xml')"/>
   </xsl:template>
 
+  <!-- Recent tweets: individual tweet -->
+  <!-- ===================================================================== -->
   <xsl:template match="recent_tweets/tweet">
     <p><xsl:value-of select="text" /></p>
   </xsl:template>

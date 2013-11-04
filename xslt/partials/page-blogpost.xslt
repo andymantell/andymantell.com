@@ -9,30 +9,30 @@
 
   <!-- Project page -->
   <!-- ===================================================================== -->
-  <xsl:template match="project">
+  <xsl:template match="blogpost">
     <xsl:call-template name="html">
-      <xsl:with-param name="filepath" select="concat('projects/', @slug)" />
+      <xsl:with-param name="filepath" select="concat('blog/', @slug)" />
       <xsl:with-param name="title" select="@title" />
     </xsl:call-template>
   </xsl:template>
 
   <!-- Project page title -->
   <!-- ===================================================================== -->
-  <xsl:template match="project" mode="title">
+  <xsl:template match="blogpost" mode="title">
     <xsl:value-of select="@title" />
   </xsl:template>
 
   <!-- Project page body content -->
   <!-- ===================================================================== -->
-  <xsl:template match="project" mode="body">
-    <p>This is the <xsl:value-of select="@title" /> project</p>
+  <xsl:template match="blogpost" mode="body">
+    <p>This is the <xsl:value-of select="@title" /> blogpost</p>
   </xsl:template>
 
   <!-- Project teasers as found on list pages -->
   <!-- ===================================================================== -->
-  <xsl:template match="project" mode="teaser">
+  <xsl:template match="blogpost" mode="teaser">
     <li>
-      This is a teaser for the <xsl:value-of select="@title" /> project
+      This is a teaser for the <xsl:value-of select="@title" /> blogpost
     </li>
   </xsl:template>
 </xsl:stylesheet>

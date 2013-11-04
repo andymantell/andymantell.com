@@ -1,6 +1,7 @@
 // Grunt.js config
 module.exports = function(grunt) {
 
+  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-exec');
@@ -30,6 +31,26 @@ module.exports = function(grunt) {
           'xslt/**/*.*'
         ],
         tasks: ['transform']
+      }
+    },
+
+    concat: {
+      xml: {
+        options: {
+          separator: '',
+          process: function(src, filepath) {
+            return src.replace(/<\?xml version="1.0"\?>\s*/g, '');
+          },
+          banner: '<?xml version="1.0"?>\n\n<site>',
+          footer: '</site>'
+        },
+        src: [
+          'xml/**/*.xml',
+          '!xml/site.xml',
+          '!xml/recent_tracks.xml',
+          '!xml/recent_tweets.xml'
+        ],
+        dest: 'xml/site.xml',
       }
     },
 
@@ -109,7 +130,7 @@ module.exports = function(grunt) {
   grunt.registerTask('fetch', ['get_tweets', 'get_recent_tracks']);
 
   // Transform
-  grunt.registerTask('transform', ['exec:clean', 'exec:transform', 'exec:logpaths']);
+  grunt.registerTask('transform', ['exec:clean', 'concat:xml', 'exec:transform', 'exec:logpaths']);
 
   // Compile stylesheets
   grunt.registerTask('css', ['compass']);

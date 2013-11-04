@@ -18,10 +18,14 @@
     <xsl:apply-templates />
   </xsl:template>
 
+  <!-- Basic page title -->
+  <!-- ===================================================================== -->
   <xsl:template match="page[not(@listing)]" mode="title">
     <xsl:value-of select="@title" />
   </xsl:template>
 
+  <!-- Basic page body content -->
+  <!-- ===================================================================== -->
   <xsl:template match="page[not(@listing)]" mode="body">
     <p>This is the <xsl:value-of select="@title" /> page</p>
   </xsl:template>
