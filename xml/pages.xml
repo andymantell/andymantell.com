@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 
-
 <page title="Home" path="">
   <region name="content">
     <p>Homepage</p>
@@ -29,5 +28,3 @@
 <page title="Projects" path="projects" listing="project" />
 
 <page title="Blog" path="blog" listing="blogpost" />
-
-

@@ -58,6 +58,9 @@ module.exports = function(grunt) {
       transform: {
         cmd: 'xsltproc --stringparam outputpath dist/ xslt/site.xslt xml/site.xml'
       },
+      remove_xml: {
+        cmd: 'rm xml/site.xml'
+      },
       clean: {
         cmd: 'find dist -mindepth 1 -and \\( \\( -name "assets" \\) -prune -or -prune -exec rm -rfv "\{\}" \\; \\)'
       },
@@ -130,7 +133,7 @@ module.exports = function(grunt) {
   grunt.registerTask('fetch', ['get_tweets', 'get_recent_tracks']);
 
   // Transform
-  grunt.registerTask('transform', ['exec:clean', 'concat:xml', 'exec:transform', 'exec:logpaths']);
+  grunt.registerTask('transform', ['exec:clean', 'concat:xml', 'exec:transform', 'exec:remove_xml', 'exec:logpaths']);
 
   // Compile stylesheets
   grunt.registerTask('css', ['compass']);
