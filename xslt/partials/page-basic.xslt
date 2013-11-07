@@ -12,6 +12,9 @@
   <xsl:template match="page[not(@listing)]">
     <xsl:call-template name="html">
       <xsl:with-param name="filepath" select="@path" />
+      <xsl:with-param name="body">
+        <xsl:apply-templates select="." mode="body" />
+      </xsl:with-param>
     </xsl:call-template>
 
     <!-- Recursively match child pages in the structure -->

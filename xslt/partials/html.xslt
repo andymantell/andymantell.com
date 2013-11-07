@@ -11,6 +11,7 @@
   <!-- ===================================================================== -->
   <xsl:template name="html">
     <xsl:param name="filepath" />
+    <xsl:param name="body" />
 
     <exsl:document href="{$outputpath}{$filepath}/index.html" method="html" omit-xml-declaration="yes" indent="yes">
       <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html&gt;&#xa;</xsl:text>
@@ -33,7 +34,7 @@
           <main class="main">
             <div class="inner-wrapper">
               <h1><xsl:apply-templates select="." mode="title" /></h1>
-              <xsl:apply-templates select="." mode="body" />
+              <xsl:copy-of select="$body" />
             </div>
           </main>
 

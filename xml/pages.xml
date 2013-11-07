@@ -25,6 +25,6 @@
   </region>
 </page>
 
-<page title="Projects" path="projects" listing="project" />
+<page title="Projects" path="projects" listing="project" rpp="6" />
 
-<page title="Blog" path="blog" listing="blogpost" />
+<page title="Blog" path="blog" listing="blogpost" rpp="3" />

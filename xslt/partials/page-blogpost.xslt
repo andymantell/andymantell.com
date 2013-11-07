@@ -12,7 +12,9 @@
   <xsl:template match="blogpost">
     <xsl:call-template name="html">
       <xsl:with-param name="filepath" select="concat('blog/', @slug)" />
-      <xsl:with-param name="title" select="@title" />
+      <xsl:with-param name="body">
+        <xsl:apply-templates select="." mode="body" />
+      </xsl:with-param>
     </xsl:call-template>
   </xsl:template>
 
