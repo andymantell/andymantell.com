@@ -14,8 +14,16 @@
 
     <xsl:variable name="nodeType" select="@listing" />
 
+    <xsl:variable name="sortedItems">
+      <xsl:for-each select="/site/*[local-name() = $nodeType]">
+        <xsl:sort select="@sticky" order="descending" />
+        <xsl:sort select="@date" order="descending" />
+        <xsl:copy-of select="." />
+      </xsl:for-each>
+    </xsl:variable>
+
     <xsl:call-template name="pagination">
-      <xsl:with-param name="items" select="/site/*[local-name() = $nodeType]" />
+      <xsl:with-param name="items" select="exsl:node-set($sortedItems)/*" />
       <xsl:with-param name="page" select="." />
       <xsl:with-param name="page_number" select="1" />
       <xsl:with-param name="rpp" select="@rpp" />
