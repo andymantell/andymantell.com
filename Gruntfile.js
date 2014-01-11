@@ -5,6 +5,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-exec');
+  grunt.loadNpmTasks('grunt-prettify');
 
   // Project configuration.
   grunt.initConfig({
@@ -52,6 +53,26 @@ module.exports = function(grunt) {
         ],
         dest: 'xml/site.xml',
       }
+    },
+
+    prettify: {
+      options: {
+        "indent": 2,
+        "condense": true,
+        "indent_inner_html": true,
+        "unformatted": [
+          "a",
+          "code",
+          "pre"
+        ]
+      },
+      all: {
+        expand: true,
+        cwd: 'dist/',
+        ext: '.html',
+        src: ['**/*.html'],
+        dest: 'dist/'
+      },
     },
 
     exec: {
@@ -133,7 +154,7 @@ module.exports = function(grunt) {
   grunt.registerTask('fetch', ['get_tweets', 'get_recent_tracks']);
 
   // Transform
-  grunt.registerTask('transform', ['exec:clean', 'concat:xml', 'exec:transform', 'exec:remove_xml', 'exec:logpaths']);
+  grunt.registerTask('transform', ['exec:clean', 'concat:xml', 'exec:transform', 'exec:remove_xml', 'exec:logpaths', "prettify"]);
 
   // Compile stylesheets
   grunt.registerTask('css', ['compass']);

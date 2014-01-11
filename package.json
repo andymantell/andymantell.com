@@ -19,6 +19,7 @@
     "twitter-1.1": "~0.1.18",
     "jsontoxml": "0.0.11",
     "request": "~2.27.0",
-    "grunt-contrib-concat": "~0.3.0"
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-prettify": "~0.3.4"
   }
 }
