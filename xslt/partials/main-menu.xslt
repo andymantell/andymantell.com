@@ -44,6 +44,14 @@
     <xsl:param name="current_page" />
     <xsl:param name="level" />
 
+    <xsl:variable name="currentPath">
+      <xsl:apply-templates select="$current_page" mode="url" />
+    </xsl:variable>
+
+    <xsl:variable name="path">
+      <xsl:apply-templates select="." mode="url" />
+    </xsl:variable>
+
     <li>
 
       <!-- Setting the class -->
@@ -52,24 +60,24 @@
         <xsl:text>main-menu__level-</xsl:text><xsl:value-of select="$level" /><xsl:text>__item</xsl:text>
 
         <!-- Put an active trail class on the current item -->
-        <xsl:if test="string-length(@path) > 1 and contains($current_page/@path, @path)">
+        <xsl:if test="string-length($path) > 1 and contains($currentPath, $path)">
           <xsl:text> main-menu__level-</xsl:text><xsl:value-of select="$level" /><xsl:text>__item--active-trail</xsl:text>
         </xsl:if>
 
         <!-- Put an active class on the current item -->
-        <xsl:if test="$current_page/@path = @path">
+        <xsl:if test="$currentPath = $path">
           <xsl:text> main-menu__level-</xsl:text><xsl:value-of select="$level" /><xsl:text>__item--active</xsl:text>
         </xsl:if>
 
         <!-- If we've got visible child pages, then output a class indicating this -->
-        <xsl:if test="page and contains($current_page/@path, @path)">
+        <xsl:if test="page and contains($currentPath, $path)">
           <xsl:text> main-menu__level-</xsl:text><xsl:value-of select="$level" /><xsl:text>__item--has-children</xsl:text>
         </xsl:if>
 
       </xsl:attribute>
 
       <!-- Output the link -->
-      <a href="/{@path}">
+      <a href="{$path}">
         <xsl:attribute name="class">
           <xsl:text>main-menu__level-</xsl:text><xsl:value-of select="$level" /><xsl:text>__link</xsl:text>
         </xsl:attribute>
@@ -77,7 +85,7 @@
       </a>
 
       <!-- If we've got child pages, then recursively output the menu items -->
-      <xsl:if test="page and contains($current_page/@path, @path)">
+      <xsl:if test="page and contains($currentPath, $path)">
         <xsl:call-template name="main_menu_items">
           <xsl:with-param name="level" select="$level + 1" />
           <xsl:with-param name="pages" select="page" />

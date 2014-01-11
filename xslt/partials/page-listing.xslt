@@ -59,7 +59,7 @@
     <xsl:call-template name="html">
 
       <xsl:with-param name="filepath">
-        <xsl:value-of select="$page/@path" />
+        <xsl:apply-templates select="$page" mode="url" />
 
         <xsl:if test="$page_number &gt; 1">
           <xsl:text>/</xsl:text>
@@ -109,8 +109,7 @@
         <xsl:otherwise>
           <a>
             <xsl:attribute name="href">
-              <xsl:text>/</xsl:text>
-              <xsl:value-of select="@path" />
+              <xsl:apply-templates select="." mode="url" />
 
               <xsl:if test="$page &gt; 1">
                 <xsl:text>/</xsl:text>
@@ -139,6 +138,13 @@
     <xsl:value-of select="@title" />
   </xsl:template>
 
+  <!-- Listing page url -->
+  <!-- ===================================================================== -->
+  <xsl:template match="page[@listing]" mode="url">
+    <xsl:text>/</xsl:text>
+    <xsl:value-of select="@path" />
+  </xsl:template>
+
   <!-- Listing page body content -->
   <!-- ===================================================================== -->
   <xsl:template match="page[@listing]" mode="body">
@@ -153,7 +159,9 @@
 
     <ul>
       <xsl:call-template name="pager">
-        <xsl:with-param name="rooturl" select="@path" />
+        <xsl:with-param name="rooturl">
+          <xsl:apply-templates select="." mode="url" />
+        </xsl:with-param>
         <xsl:with-param name="page" select="1" />
         <xsl:with-param name="page_number" select="$page_number" />
         <xsl:with-param name="total_items" select="$total_items" />

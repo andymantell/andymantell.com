@@ -11,7 +11,9 @@
   <!-- ===================================================================== -->
   <xsl:template match="page[not(@listing)]">
     <xsl:call-template name="html">
-      <xsl:with-param name="filepath" select="@path" />
+      <xsl:with-param name="filepath">
+        <xsl:apply-templates select="." mode="url" />
+      </xsl:with-param>
       <xsl:with-param name="body">
         <xsl:apply-templates select="." mode="body" />
       </xsl:with-param>
@@ -25,6 +27,13 @@
   <!-- ===================================================================== -->
   <xsl:template match="page[not(@listing)]" mode="title">
     <xsl:value-of select="@title" />
+  </xsl:template>
+
+  <!-- Basic page url -->
+  <!-- ===================================================================== -->
+  <xsl:template match="page[not(@listing)]" mode="url">
+    <xsl:text>/</xsl:text>
+    <xsl:value-of select="@path" />
   </xsl:template>
 
   <!-- Basic page body content -->
