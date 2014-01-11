@@ -11,7 +11,9 @@
   <!-- ===================================================================== -->
   <xsl:template match="project">
     <xsl:call-template name="html">
-      <xsl:with-param name="filepath" select="concat('projects/', @slug)" />
+      <xsl:with-param name="filepath">
+        <xsl:apply-templates select="." mode="url" />
+      </xsl:with-param>
       <xsl:with-param name="title" select="@title" />
       <xsl:with-param name="body">
         <xsl:apply-templates select="." mode="body" />
@@ -25,6 +27,13 @@
     <xsl:value-of select="@title" />
   </xsl:template>
 
+  <!-- Project page url -->
+  <!-- ===================================================================== -->
+  <xsl:template match="project" mode="url">
+    <xsl:text>/</xsl:text>
+    <xsl:value-of select="concat('projects/', @slug)" />
+  </xsl:template>
+
   <!-- Project page body content -->
   <!-- ===================================================================== -->
   <xsl:template match="project" mode="body">
@@ -35,7 +44,12 @@
   <!-- ===================================================================== -->
   <xsl:template match="project" mode="teaser">
     <li>
-      This is a teaser for the <xsl:value-of select="@title" /> project
+      <a>
+        <xsl:attribute name="href">
+          <xsl:apply-templates select="." mode="url" />
+        </xsl:attribute>
+        This is a teaser for the <xsl:value-of select="@title" /> project
+      </a>
     </li>
   </xsl:template>
 </xsl:stylesheet>
