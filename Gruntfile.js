@@ -127,7 +127,7 @@ module.exports = function(grunt) {
   });
 
   // Default task.
-  grunt.registerTask('default', ['exec:clean', 'exec:transform', 'compass']);
+  grunt.registerTask('default', ['rebuild']);
 
   // Fetch external data
   grunt.registerTask('fetch', ['get_tweets', 'get_recent_tracks']);
