@@ -98,7 +98,7 @@
     <xsl:param name="total_items" />
     <xsl:param name="total_pages" />
 
-    <li>
+    <li class="pager__item">
       <xsl:choose>
         <xsl:when test="$page = $page_number">
           <strong>
@@ -107,7 +107,7 @@
         </xsl:when>
 
         <xsl:otherwise>
-          <a>
+          <a class="pager__link">
             <xsl:attribute name="href">
               <xsl:apply-templates select="." mode="url" />
 
@@ -153,11 +153,13 @@
     <xsl:param name="total_items" />
     <xsl:param name="total_pages" />
 
-    <ul>
-      <xsl:apply-templates select="$items" mode="teaser" />
+    <ul class="list-page list-page--gallery">
+      <xsl:for-each select="$items">
+        <li class="list-page__item"><xsl:apply-templates select="." mode="teaser" /></li>
+      </xsl:for-each>
     </ul>
 
-    <ul>
+    <ul class="pager">
       <xsl:call-template name="pager">
         <xsl:with-param name="rooturl">
           <xsl:apply-templates select="." mode="url" />

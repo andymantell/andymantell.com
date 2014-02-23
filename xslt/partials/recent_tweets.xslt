@@ -10,13 +10,17 @@
   <!-- Recent tweets template -->
   <!-- ===================================================================== -->
   <xsl:template name="recent_tweets">
-    <xsl:apply-templates select="document('../../xml/recent_tweets.xml')"/>
+    <ul class="plain-list">
+      <xsl:apply-templates select="document('../../xml/recent_tweets.xml')"/>
+    </ul>
   </xsl:template>
 
   <!-- Recent tweets: individual tweet -->
   <!-- ===================================================================== -->
   <xsl:template match="recent_tweets/tweet">
-    <p><xsl:value-of select="text" /></p>
+    <li class="plain-list__item">
+      <xsl:value-of select="text" />
+    </li>
   </xsl:template>
 
 </xsl:stylesheet>

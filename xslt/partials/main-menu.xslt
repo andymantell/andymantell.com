@@ -81,7 +81,14 @@
         <xsl:attribute name="class">
           <xsl:text>main-menu__level-</xsl:text><xsl:value-of select="$level" /><xsl:text>__link</xsl:text>
         </xsl:attribute>
-        <xsl:value-of select="@title" />
+        <xsl:choose>
+          <xsl:when test="@menu_title">
+            <xsl:value-of select="@menu_title" />
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="@title" />
+          </xsl:otherwise>
+        </xsl:choose>
       </a>
 
       <!-- If we've got child pages, then recursively output the menu items -->

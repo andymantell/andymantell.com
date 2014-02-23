@@ -1,4 +1,10 @@
 <?xml version="1.0"?>
 
 <project title="Edge Online" slug="edge-online" date="2011-01">
+  <images>
+    <image src="http://placehold.it/400x250" />
+    <image teaser="teaser" src="http://placehold.it/400x250" />
+    <image src="http://placehold.it/400x250" />
+    <image src="http://placehold.it/400x250" />
+  </images>
 </project>

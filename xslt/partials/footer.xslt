@@ -13,8 +13,23 @@
   <!-- Page footer -->
   <!-- ===================================================================== -->
   <xsl:template name="footer">
-    <xsl:call-template name="recent_tweets" />
-    <xsl:call-template name="recent_tracks" />
+    <div class="grid-wrap">
+
+      <div class="grid-col grid-one-third">
+        <xsl:call-template name="recent_tweets" />
+      </div>
+
+      <div class="grid-col grid-one-third">
+        <xsl:call-template name="recent_tracks" />
+      </div>
+
+      <div class="grid-col grid-one-third">
+        <p>Contact</p>
+        <p>Form</p>
+        <p>Here</p>
+      </div>
+
+    </div>
   </xsl:template>
 
 </xsl:stylesheet>

@@ -23,8 +23,11 @@
         </head>
 
         <body>
-          <header class="site-header" role="banner">
+          <header class="masthead" role="banner">
             <div class="inner-wrapper">
+
+              <a class="masthead__logo" href="/">Andy Mantell</a>
+
               <xsl:call-template name="main_menu">
                 <xsl:with-param name="current_page" select="." />
               </xsl:call-template>
@@ -38,7 +41,7 @@
             </div>
           </main>
 
-          <footer class="site-footer">
+          <footer class="footer">
             <div class="inner-wrapper">
               <xsl:call-template name="footer" />
             </div>

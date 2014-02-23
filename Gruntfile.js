@@ -133,7 +133,7 @@ module.exports = function(grunt) {
 
     var done = this.async();
 
-    request('http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=andymantell&api_key=' + grunt.config.data.lastfm.api_key, function(error, response, body) {
+    request('http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=andymantell&limit=5&api_key=' + grunt.config.data.lastfm.api_key, function(error, response, body) {
       var fs = require('fs');
       fs.writeFile("xml/recent_tracks.xml", body, function(err) {
         if(err) {

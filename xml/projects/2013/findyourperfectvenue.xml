@@ -1,4 +1,10 @@
 <?xml version="1.0"?>
 
 <project title="Find Your Perfect Venue" slug="find-your-perfect-venue" date="2013-07">
+  <images>
+    <image src="http://placehold.it/400x250" />
+    <image teaser="teaser" src="http://placehold.it/400x250" />
+    <image src="http://placehold.it/400x250" />
+    <image src="http://placehold.it/400x250" />
+  </images>
 </project>

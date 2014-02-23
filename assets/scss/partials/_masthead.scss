@@ -1,0 +1,18 @@
+.masthead {
+  padding: 20px 0;
+  margin-bottom: 20px;
+  @include pie-clearfix;
+}
+
+  .masthead__logo {
+    font-size: 60px;
+    color: #000;
+    text-decoration: none;
+    font-family: sans-serif;
+    float: left;
+  }
+
+
+  .main-menu {
+    float: right;
+  }

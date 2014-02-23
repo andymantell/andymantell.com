@@ -1,4 +1,10 @@
 <?xml version="1.0"?>
 
 <project title="Tamar Telecommunications" slug="tamar-telecommunications" date="2011-04">
+  <images>
+    <image src="http://placehold.it/400x250" />
+    <image teaser="teaser" src="http://placehold.it/400x250" />
+    <image src="http://placehold.it/400x250" />
+    <image src="http://placehold.it/400x250" />
+  </images>
 </project>

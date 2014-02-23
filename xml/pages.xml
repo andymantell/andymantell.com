@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<page title="Home" path="">
+<page title="Andy Mantell - Freelance web developer" menu_title="Home" path="">
   <region name="content">
     <p>Homepage</p>
   </region>
@@ -25,6 +25,15 @@
   </region>
 </page>
 
-<page title="Projects" path="projects" listing="project" rpp="6" />
+<page title="Projects" path="projects" listing="project" rpp="9">
+
+  <page title="Clients" path="projects/clients" listing="client" rpp="9" />
+
+  <page title="Child page" path="projects/page">
+    <region name="content">
+      <p>This is a child of the about page</p>
+    </region>
+  </page>
+</page>
 
 <page title="Blog" path="blog" listing="blogpost" rpp="3" />

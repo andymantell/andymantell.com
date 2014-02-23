@@ -1,0 +1,42 @@
+body {
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0 0 20px 0;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+a {
+  color: $body-link-colour;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+strong,
+b {
+  font-weight: bold;
+}
+
+em,
+i {
+  font-style: italic;
+}

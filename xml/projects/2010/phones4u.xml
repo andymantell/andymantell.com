@@ -1,4 +1,10 @@
 <?xml version="1.0"?>
 
 <project title="Phones4U" slug="phones4u-checkout" date="2010-08">
+  <images>
+    <image src="http://placehold.it/400x250" />
+    <image teaser="teaser" src="http://placehold.it/400x250" />
+    <image src="http://placehold.it/400x250" />
+    <image src="http://placehold.it/400x250" />
+  </images>
 </project>

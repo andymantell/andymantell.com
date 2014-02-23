@@ -1,4 +1,10 @@
 <?xml version="1.0"?>
 
 <project title="Fuel Poverty" slug="fuel-poverty" date="2012-10">
+  <images>
+    <image src="http://placehold.it/400x250" />
+    <image teaser="teaser" src="http://placehold.it/400x250" />
+    <image src="http://placehold.it/400x250" />
+    <image src="http://placehold.it/400x250" />
+  </images>
 </project>

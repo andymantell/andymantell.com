@@ -1,0 +1,33 @@
+.teaser--image {
+  position: relative;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .teaser__header {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 15px 13px 15px;
+    background-color: rgba(0,0,0,0.5);
+    @include box-sizing(border-box);
+  }
+
+  .teaser__heading {
+    margin: 0;
+  }
+
+  .teaser__link {
+    text-decoration: none;
+    color: #fff;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}

@@ -7,9 +7,9 @@
   exclude-result-prefixes="exsl"
   version="1.0">
 
-  <!-- Project page -->
+  <!-- Client page -->
   <!-- ===================================================================== -->
-  <xsl:template match="project">
+  <xsl:template match="client">
     <xsl:call-template name="html">
       <xsl:with-param name="filepath">
         <xsl:apply-templates select="." mode="url" />
@@ -17,34 +17,33 @@
       <xsl:with-param name="title" select="@title" />
 
       <xsl:with-param name="body">
-        <xsl:apply-templates select="images/image" />
         <xsl:apply-templates select="." mode="body" />
       </xsl:with-param>
     </xsl:call-template>
   </xsl:template>
 
-  <!-- Project page title -->
+  <!-- Client page title -->
   <!-- ===================================================================== -->
-  <xsl:template match="project" mode="title">
+  <xsl:template match="client" mode="title">
     <xsl:value-of select="@title" />
   </xsl:template>
 
-  <!-- Project page url -->
+  <!-- Client page url -->
   <!-- ===================================================================== -->
-  <xsl:template match="project" mode="url">
+  <xsl:template match="client" mode="url">
     <xsl:text>/</xsl:text>
-    <xsl:value-of select="concat('projects/', @slug)" />
+    <xsl:value-of select="concat('projects/clients/', @slug)" />
   </xsl:template>
 
-  <!-- Project page body content -->
+  <!-- Client page body content -->
   <!-- ===================================================================== -->
-  <xsl:template match="project" mode="body">
-    <p>This is the <xsl:value-of select="@title" /> project</p>
+  <xsl:template match="client" mode="body">
+    <p>This is the <xsl:value-of select="@title" /> client</p>
   </xsl:template>
 
-  <!-- Project teasers as found on list pages -->
+  <!-- Client teasers as found on list pages -->
   <!-- ===================================================================== -->
-  <xsl:template match="project" mode="teaser">
+  <xsl:template match="client" mode="teaser">
     <article class="teaser teaser--image">
       <a class="teaser__link">
         <xsl:attribute name="href">

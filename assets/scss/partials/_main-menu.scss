@@ -1,5 +1,14 @@
 .main-menu {
+  font-size: 20px;
 
+  a {
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
 }
 
 /**
@@ -7,7 +16,6 @@
  */
 .main-menu__level-1 {
   @include pie-clearfix;
-  background: darkgrey;
   position: relative;
   line-height: 50px;
 }
@@ -24,8 +32,7 @@
 .main-menu__level-1__link:active,
 .main-menu__level-1__item--active > a,
 .main-menu__level-1__item--active-trail > a {
-  background-color: black;
-  color: #fff;
+
 }
 
 .main-menu__level-1__link {
@@ -41,7 +48,6 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  background: grey;
   @include pie-clearfix;
 }
 
@@ -58,6 +64,5 @@
 .main-menu__level-2__link:active,
 .main-menu__level-2__item--active > a,
 .main-menu__level-2__item--active-trail > a {
-  background-color: black;
-  color: #fff;
+
 }

@@ -1,4 +1,9 @@
 .inner-wrapper {
-  width: 66%;
+  max-width: 1200px;
+  padding: 0 20px;
   margin: 0 auto;
+}
+
+@media (min-width: 767px) {
+  @include grids-init('grid');
 }

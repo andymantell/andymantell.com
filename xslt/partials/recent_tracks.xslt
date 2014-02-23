@@ -10,15 +10,19 @@
   <!-- Recent tracks template -->
   <!-- ===================================================================== -->
   <xsl:template name="recent_tracks">
-    <xsl:apply-templates select="document('../../xml/recent_tracks.xml')"/>
+    <ul class="plain-list">
+      <xsl:apply-templates select="document('../../xml/recent_tracks.xml')"/>
+    </ul>
   </xsl:template>
 
   <!-- Recent tracks: individual track -->
   <!-- ===================================================================== -->
   <xsl:template match="lfm/recenttracks/track">
-    <p>
-      <xsl:value-of select="artist" />: <xsl:value-of select="name" />
-    </p>
+    <li class="plain-list__item">
+      <a href="{url}">
+        <xsl:value-of select="artist" />: <xsl:value-of select="name" />
+      </a>
+    </li>
   </xsl:template>
 
 </xsl:stylesheet>
