@@ -1,5 +1,6 @@
 // Grunt.js config
 module.exports = function(grunt) {
+  'use strict';
 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -113,7 +114,7 @@ module.exports = function(grunt) {
       });
 
       var fs = require('fs');
-      fs.writeFile("xml/recent_tweets.xml", jsontoxml(recent_tweets, {prettyPrint: true, xmlHeader: true, removeIllegalNameCharacters : true}), function(err) {
+      fs.writeFile("xml/recent_tweets.xml", jsontoxml(recent_tweets, {escape: true, prettyPrint: true, xmlHeader: true, removeIllegalNameCharacters : true}), function(err) {
         if(err) {
             console.log(err);
         } else {
