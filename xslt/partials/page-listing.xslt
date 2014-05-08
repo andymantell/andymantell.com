@@ -29,6 +29,9 @@
       <xsl:with-param name="rpp" select="@rpp" />
     </xsl:call-template>
 
+    <!-- Recursively match child pages in the structure -->
+    <xsl:apply-templates />
+
   </xsl:template>
 
   <xsl:template name="pagination">
