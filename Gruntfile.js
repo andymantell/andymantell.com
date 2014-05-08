@@ -7,11 +7,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-prettify');
+  grunt.loadNpmTasks('grunt-aws-s3');
 
   // Project configuration.
   grunt.initConfig({
     twitter: grunt.file.readJSON('twitter.json'),
     lastfm: grunt.file.readJSON('lastfm.json'),
+    aws: grunt.file.readJSON('aws.json'),
 
     compass: {
       dist: {
@@ -89,6 +91,33 @@ module.exports = function(grunt) {
       logpaths: {
         cmd: 'echo "Output structure:"; ls dist/* -R | grep ":$" | sed -e \'s/:$//\' -e \'s/[^-][^\\/]*\\//--/g\' -e \'s/^/   /\' -e \'s/-/|/\''
       }
+    },
+
+    aws_s3: {
+      options: {
+        accessKeyId: '<%= aws.accessKeyId %>',
+        secretAccessKey: '<%= aws.secretAccessKey %>',
+        region: '<%= aws.region %>',
+        uploadConcurrency: 5,
+        downloadConcurrency: 5
+      },
+      production: {
+        options: {
+          bucket: '<%= aws.bucket %>'
+        },
+        files: [
+          {expand: true, cwd: 'dist/', src: ['**']}
+        ]
+      },
+      clean_production: {
+        options: {
+          bucket: '<%= aws.bucket %>',
+          debug: false
+        },
+        files: [
+          {dest: '/', action: 'delete'}
+        ]
+      }
     }
   });
 
@@ -162,5 +191,10 @@ module.exports = function(grunt) {
 
   // Build
   grunt.registerTask('rebuild', ['fetch', 'transform', 'css']);
+
+  // AWS tasks
+  grunt.registerTask('clean_production', ['aws_s3:clean_production']);
+  grunt.registerTask('push_production', ['aws_s3:production']);
+  grunt.registerTask('refresh_production', ['clean_production', 'push_production']);
 
 };
