@@ -9,5 +9,3 @@ output_style = :compressed
 
 # Remove SASS/Compass relative comments.
 line_comments = false
-
-require 'breakpoint'
