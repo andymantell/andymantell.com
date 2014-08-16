@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<blogpost title="Restricting items displayed in Drupal Media library using hook_query_alter" slug="restricting-items-displayed-drupal-media-library-using-hook-query-alter">
+
+  <aliases>
+    <alias>blog/2012/07/restricting-items-displayed-drupal-media-library-using-hookqueryalter</alias>
+  </aliases>
+
+  <teaser>Using Drupal's hook_query_alter() to restrict the items shown in the Media library to those uploaded by the current user</teaser>
+
+  <region name="content">
+    <p>I've been using the Drupal <a href="http://drupal.org/project/media">Media module</a> on sites for quite a long time now but one thing that's always annoyed me slightly is that it just shows one giant list of media from every user. For small sites this often just a minor inconvenience but my current project (an intranet with many editor users) wasn't such a simple case. I had a look around and couldn't find a solution already out there and in the end came up with this little snippet using <a href="http://api.drupal.org/api/drupal/modules%21system%21system.api.php/function/hook_query_alter/7">hook_query_alter()</a>:</p>
+    <script src="http://gist.github.com/3083551.js?file=foo.module"></script>
+    <p>It's not <em>the</em> most elegant solution ever, but it seems to do the trick. Unfortunately the Media module doesn't tag the query so I had to put in some bodgetastic tests to isolate the correct query. The nicer way to do it would be to use <code>$query-><a href="http://api.drupal.org/api/drupal/includes%21database%21query.inc/function/QueryAlterableInterface%3A%3AhasTag/7">hasTag</a>('something')</code></p>
+    <p>You could easily create other conditions in here as well, such as filtering the query based on the timestamp field in the file_managed table, or you could feasibly join in other tables to do something like only displaying files uploaded from a certain field.</p>
+    <p>I should mention, this is a <em>slight</em> hack in the sense that it only applies to the media-7.x-1.x releases. media-7.x-2.x will use a <a href="http://drupal.org/project/views">View</a> for the library browser so you should be able to do this kind of filtering in a much more sane way in future! However at the time of writing, the tag <em>media-7.x-2.0-unstable6</em> precludes me using it on client sites&#8230;</p>
+    <p>The above code is available in a Drupal.org sandbox for anyone that just wants to download and use it (<a href="http://drupal.org/sandbox/andymantell/1630386">andymantell's sandbox: Media Library User Restrict</a>). This will never be promoted to a full project however since the forthcoming media-7.x-2.x series should solve the problem more elegantly as mentioned above.</p>
+  </region>
+
+</blogpost>
+

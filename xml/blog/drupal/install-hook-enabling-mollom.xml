@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<blogpost title="Enabling Mollom protection for forms via an install profile or update hook" slug="enabling-mollom-protection-using-install-profile-or-update-hook">
+
+  <aliases>
+    <alias>blog/2012/07/enabling-mollom-protection-forms-install-profile-or-update-hook</alias>
+  </aliases>
+
+  <teaser>Managing Mollom form configurations in Drupal using hook_update() and hook_install()</teaser>
+
+  <region name="content">
+    <p>Most Drupal modules these days integrate with Features / CTools exportables in some shape or form making it easy to deploy configuration changes easily or even completely re-build your site from scratch. However, there are a few modules such as <a href="http://drupal.org/project/mollom">Mollom</a> that lag behind slightly and require you to write install and update hooks to initialise / deploy configuration. The Mollom module has a ticket open to <a href="http://drupal.org/node/717874">provide exportables for mollom forms</a> but until that work is complete we will need to use the Mollom module's helper functions in our install routines. (<em>Side note - Mollom's global configuration is stored in normal Drupal variables so these can be exported to code via Strongarm or just stuck in settings.php if that's how you like to work</em>)</p>
+    <p>Without further ado, here is some sample code to apply mollom protection to the comment form for the "foo" content type. The example uses a helper function called _foo_install_mollom() which does the actual work and this is then called from both hook_install() and hook_update_N() functions. If you are still in the development phase and are rebuilding your site regularly from scratch you could skip the update hook.</p>
+    <script src="https://gist.github.com/3169862.js?file=foo.install"></script>
+    <p>The above code should be placed in a file called "foo.install", alongisde "foo.info" and "foo.module" where "foo" is the name of your custom module. N.B. Install hooks can't be placed in a theme, they must be in a module. You can <a href="http://drupal.org/node/1074360">find a tutorial for creating Drupal modules here</a>.</p>
+    <p><a href="http://api.drupalize.me/api/drupal/function/mollom_form_save/7">mollom_form_save()</a> is essentially a wrapper around <a href="http://api.drupal.org/api/drupal/includes%21common.inc/function/drupal_write_record/7">drupal_write_record()</a> so it could also be used in update hooks (see <a href="http://api.drupal.org/api/drupal/modules%21system%21system.api.php/function/hook_update_N/7">hook_update_N()</a> to deploy changes to mollom forms that are already protected. To do this, simply change the desired values in your mollom config and increment the number on the update hook. Running update.php on your live site will then deploy this change.</p>
+    <p>This pattern of using hook_install() and hook_update() is useful for other modules such as the WYSIWYG module which does not yet have Features integration in a stable release (<em>Although as per this ticket - <a href="http://drupal.org/node/624018">Exportables and Features support for WYSIWYG 7.x</a> - Features support is present in wysiwyg-7.x-2.x-dev. The maintainers are unfortunately holding up a stable release due to other pending issues.</em>)</p>
+  </region>
+
+</blogpost>
+

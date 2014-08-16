@@ -36,19 +36,22 @@
   <!-- Blog post body content -->
   <!-- ===================================================================== -->
   <xsl:template match="blogpost" mode="body">
-    <p>This is the <xsl:value-of select="@title" /> blogpost</p>
+    <xsl:copy-of select="region[@name='content']" />
   </xsl:template>
 
   <!-- Blog post teasers as found on list pages -->
   <!-- ===================================================================== -->
   <xsl:template match="blogpost" mode="teaser">
-    <li>
-      <a>
-        <xsl:attribute name="href">
-          <xsl:apply-templates select="." mode="url" />
-        </xsl:attribute>
-        This is a teaser for the <xsl:value-of select="@title" /> blog post
-      </a>
-    </li>
+    <a>
+      <xsl:attribute name="href">
+        <xsl:apply-templates select="." mode="url" />
+      </xsl:attribute>
+      <h2>
+        <xsl:value-of select="@title" />
+      </h2>
+      <p>
+        <xsl:value-of select="teaser" />
+      </p>
+    </a>
   </xsl:template>
 </xsl:stylesheet>

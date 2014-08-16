@@ -39,7 +39,7 @@
   <!-- Project page body content -->
   <!-- ===================================================================== -->
   <xsl:template match="project" mode="body">
-    <p>This is the <xsl:value-of select="@title" /> project</p>
+    <xsl:copy-of select="region[@name='content']" />
   </xsl:template>
 
   <!-- Project teasers as found on list pages -->

@@ -38,7 +38,7 @@
   <!-- Client page body content -->
   <!-- ===================================================================== -->
   <xsl:template match="client" mode="body">
-    <p>This is the <xsl:value-of select="@title" /> client</p>
+    <xsl:copy-of select="region[@name='content']" />
   </xsl:template>
 
   <!-- Client teasers as found on list pages -->

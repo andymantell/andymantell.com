@@ -66,7 +66,8 @@ module.exports = function(grunt) {
         "unformatted": [
           "a",
           "code",
-          "pre"
+          "pre",
+          "p"
         ]
       },
       all: {

@@ -31,7 +31,7 @@
 
   <page title="Child page" path="projects/page">
     <region name="content">
-      <p>This is a child of the about page</p>
+      <p>This is a child of the projects page</p>
     </region>
   </page>
 </page>

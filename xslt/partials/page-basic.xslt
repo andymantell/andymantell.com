@@ -39,7 +39,7 @@
   <!-- Basic page body content -->
   <!-- ===================================================================== -->
   <xsl:template match="page[not(@listing)]" mode="body">
-    <p>This is the <xsl:value-of select="@title" /> page</p>
+    <xsl:copy-of select="region[@name='content']" />
   </xsl:template>
 
 </xsl:stylesheet>
