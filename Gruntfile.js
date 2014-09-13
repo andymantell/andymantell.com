@@ -146,9 +146,9 @@ module.exports = function(grunt) {
       var fs = require('fs');
       fs.writeFile("xml/recent_tweets.xml", jsontoxml(recent_tweets, {escape: true, prettyPrint: true, xmlHeader: true, removeIllegalNameCharacters : true}), function(err) {
         if(err) {
-            console.log(err);
+          console.log(err);
         } else {
-            console.log("Saved tweet xml.");
+          console.log("Saved tweet xml.");
         }
 
         done();
@@ -168,9 +168,9 @@ module.exports = function(grunt) {
       var fs = require('fs');
       fs.writeFile("xml/recent_tracks.xml", body, function(err) {
         if(err) {
-            console.log(err);
+          console.log(err);
         } else {
-            console.log("Saved recent tracks xml.");
+          console.log("Saved recent tracks xml.");
         }
 
         done();
