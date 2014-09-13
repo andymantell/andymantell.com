@@ -3,7 +3,7 @@
 <blogpost title="Enabling Mollom protection for forms via an install profile or update hook" slug="enabling-mollom-protection-using-install-profile-or-update-hook">
 
   <aliases>
-    <alias>blog/2012/07/enabling-mollom-protection-forms-install-profile-or-update-hook</alias>
+    <alias>/blog/2012/07/enabling-mollom-protection-forms-install-profile-or-update-hook</alias>
   </aliases>
 
   <teaser>Managing Mollom form configurations in Drupal using hook_update() and hook_install()</teaser>

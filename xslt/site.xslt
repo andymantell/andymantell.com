@@ -9,6 +9,7 @@
 
   <xsl:include href="partials/utils.xslt"/>
 
+  <xsl:include href="partials/htaccess.xslt"/>
   <xsl:include href="partials/html.xslt"/>
   <xsl:include href="partials/main-menu.xslt"/>
   <xsl:include href="partials/footer.xslt"/>
@@ -20,5 +21,10 @@
   <xsl:include href="partials/homepage.xslt"/>
 
   <xsl:param name="outputpath" />
+
+  <xsl:template match="/site">
+    <xsl:apply-templates select="." mode="htaccess" />
+    <xsl:apply-templates />
+  </xsl:template>
 
 </xsl:stylesheet>

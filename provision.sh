@@ -15,6 +15,10 @@ sudo apt-get install -y apache2 xsltproc ruby-full build-essential libssl-dev no
 sudo rm -rf /var/www/html
 sudo ln -fs /vagrant/dist /var/www/html
 
+# Configure apache
+sudo a2enmod rewrite
+sudo service apache2 restart
+
 # Install grunt-cli
 sudo npm install grunt-cli -g
 

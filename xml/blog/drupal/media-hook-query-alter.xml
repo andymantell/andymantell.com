@@ -3,7 +3,7 @@
 <blogpost title="Restricting items displayed in Drupal Media library using hook_query_alter" slug="restricting-items-displayed-drupal-media-library-using-hook-query-alter">
 
   <aliases>
-    <alias>blog/2012/07/restricting-items-displayed-drupal-media-library-using-hookqueryalter</alias>
+    <alias>/blog/2012/07/restricting-items-displayed-drupal-media-library-using-hookqueryalter</alias>
   </aliases>
 
   <teaser>Using Drupal's hook_query_alter() to restrict the items shown in the Media library to those uploaded by the current user</teaser>
