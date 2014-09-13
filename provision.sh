@@ -24,12 +24,3 @@ npm install
 
 # Install Compass
 sudo gem install compass
-
-# Register grunt watch to run on startup
-crontab -l | { cat; echo "@reboot grunt --base /vagrant watch"; } | crontab -
-
-# Kick off an initial rebuild with grunt
-grunt
-
-# And then run the watch task
-grunt watch &
