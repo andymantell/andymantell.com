@@ -24,6 +24,8 @@
   .teaser__link {
     text-decoration: none;
     color: #fff;
+    display: block;
+    position: relative;
 
     &:hover,
     &:focus {

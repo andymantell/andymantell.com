@@ -32,13 +32,30 @@
   <!-- ===================================================================== -->
   <xsl:template match="client" mode="url">
     <xsl:text>/</xsl:text>
-    <xsl:value-of select="concat('projects/clients/', @slug)" />
+    <xsl:value-of select="concat('projects/', @slug)" />
   </xsl:template>
 
   <!-- Client page body content -->
   <!-- ===================================================================== -->
   <xsl:template match="client" mode="body">
     <xsl:copy-of select="region[@name='content']" />
+
+    <!-- Project teasers -->
+    <xsl:variable name="sortedItems">
+      <xsl:for-each select="/site/project[@client='cx-partners']">
+        <xsl:sort select="@sticky" order="descending" />
+        <xsl:sort select="@date" order="descending" />
+        <xsl:if test="not(position() > 6)">
+          <xsl:copy-of select="." />
+        </xsl:if>
+      </xsl:for-each>
+    </xsl:variable>
+
+    <ul class="list-page list-page--gallery">
+      <xsl:for-each select="exsl:node-set($sortedItems)/*">
+        <li class="list-page__item"><xsl:apply-templates select="." mode="teaser" /></li>
+      </xsl:for-each>
+    </ul>
   </xsl:template>
 
   <!-- Client teasers as found on list pages -->
@@ -54,8 +71,28 @@
           <h2 class="teaser__heading"><xsl:value-of select="@title" /></h2>
         </header>
 
-        <xsl:apply-templates select="images/image[@teaser]" />
+        <xsl:apply-templates select="logo/image" />
       </a>
+    </article>
+  </xsl:template>
+
+  <!-- Client teasers as found on project pages -->
+  <!-- ===================================================================== -->
+  <xsl:template match="client" mode="associated">
+    <article class="teaser teaser--image">
+      <a class="teaser__link">
+        <xsl:attribute name="href">
+          <xsl:apply-templates select="." mode="url" />
+        </xsl:attribute>
+
+        <header class="teaser__header">
+          <h2 class="teaser__heading"><xsl:value-of select="@title" /></h2>
+        </header>
+
+        <xsl:apply-templates select="logo/image" />
+      </a>
+
+      <xsl:copy-of select="description" />
     </article>
   </xsl:template>
 </xsl:stylesheet>

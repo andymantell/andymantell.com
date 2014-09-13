@@ -10,6 +10,9 @@
   <!-- Project page -->
   <!-- ===================================================================== -->
   <xsl:template match="project">
+
+    <xsl:variable name="client" select="@client" />
+
     <xsl:call-template name="html">
       <xsl:with-param name="filepath">
         <xsl:apply-templates select="." mode="url" />
@@ -19,6 +22,10 @@
       <xsl:with-param name="body">
         <xsl:apply-templates select="images/image" />
         <xsl:apply-templates select="." mode="body" />
+      </xsl:with-param>
+
+      <xsl:with-param name="sidebar-right">
+        <xsl:apply-templates select="/site/client[@slug=$client]" mode="associated" />
       </xsl:with-param>
     </xsl:call-template>
   </xsl:template>
@@ -33,7 +40,7 @@
   <!-- ===================================================================== -->
   <xsl:template match="project" mode="url">
     <xsl:text>/</xsl:text>
-    <xsl:value-of select="concat('projects/', @slug)" />
+    <xsl:value-of select="concat('projects/', @client, '/', @slug)" />
   </xsl:template>
 
   <!-- Project page body content -->

@@ -11,8 +11,6 @@
   <!-- ===================================================================== -->
   <xsl:template match="image">
     <img src="{@src}" />
-    <!--<img src="{$image/@src}" />-->
-    <!--<xsl:copy-of select="$image" />-->
   </xsl:template>
 
 </xsl:stylesheet>

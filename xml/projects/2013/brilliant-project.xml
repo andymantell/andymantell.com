@@ -1,10 +1,23 @@
 <?xml version="1.0"?>
 
-<project title="Brilliant Project" slug="brilliant-project" date="2013-11" sticky="sticky">
+<project title="Brilliant Project" slug="brilliant-project" client="cx-partners" date="2013-11" sticky="sticky">
+
   <images>
-    <image src="http://placehold.it/400x250" />
-    <image teaser="teaser" src="http://placehold.it/400x250" />
-    <image src="http://placehold.it/400x250" />
-    <image src="http://placehold.it/400x250" />
+    <image src="http://placehold.it/300x250" />
+    <image teaser="teaser" src="http://placehold.it/300x250" />
+    <image src="http://placehold.it/300x250" />
+    <image src="http://placehold.it/300x250" />
   </images>
+
+  <tags>
+    <tag>HTML</tag>
+    <tag>CSS</tag>
+    <tag>JavaScript</tag>
+  </tags>
+
+  <description>
+    <p>Test</p>
+    <p>Test</p>
+    <p>Test</p>
+  </description>
 </project>

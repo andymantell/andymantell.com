@@ -1,4 +1,8 @@
 <?xml version="1.0"?>
 
 <client title="CX Partners" slug="cx-partners">
+  <logo>
+    <image src="http://placehold.it/300x250" />
+  </logo>
+  <description>Description of CX Partners here</description>
 </client>
