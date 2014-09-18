@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<client title="CX Partners" slug="cx-partners">
+<client title="CX Partners" slug="cx-partners" status="published">
   <logo>
     <image src="http://placehold.it/300x250" />
   </logo>

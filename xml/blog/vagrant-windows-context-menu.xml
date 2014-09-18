@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<blogpost title="Running vagrant up from the Windows context menu" slug="vagrant-up-windows-context-menu">
+<blogpost title="Running vagrant up from the Windows context menu" slug="vagrant-up-windows-context-menu" status="published"  date="2014-09-18">
   <teaser>A handy little trick for running "vagrant up" without opening the command line</teaser>
   <region name="content">
   </region>
