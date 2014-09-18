@@ -64,6 +64,10 @@
 
         <xsl:apply-templates select="images/image[@teaser]" />
       </a>
+
+      <div class="teaser__categories">
+        <xsl:apply-templates select="categories" mode="links" />
+      </div>
     </article>
   </xsl:template>
 </xsl:stylesheet>

@@ -7,7 +7,8 @@
   }
 
 
-.list-page--gallery {
+.list-page--gallery,
+%list-page--gallery {
   @media (min-width: 600px) {
     margin-left: -$grid-gutter;
     @include pie-clearfix;
@@ -21,9 +22,19 @@
       width: 1 / 2 * 100%;
     }
 
-    @media (min-width: 900px) {
-      width: 1 / 3 * 100%;
-    }
+    // @media (min-width: 900px) {
+    //   width: 1 / 3 * 100%;
+    // }
+  }
+}
 
+.list-page--promo-gallery {
+  @extend %list-page--gallery;
+
+  .list-page__item{
+    &:first-child {
+      width: auto;
+      float: none;
+    }
   }
 }

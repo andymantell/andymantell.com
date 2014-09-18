@@ -8,6 +8,8 @@
   version="1.0">
 
   <xsl:include href="partials/utils.xslt"/>
+  <xsl:include href="partials/listing.xslt"/>
+  <xsl:include href="partials/categories.xslt"/>
 
   <xsl:include href="partials/htaccess.xslt"/>
   <xsl:include href="partials/html.xslt"/>
@@ -21,6 +23,8 @@
   <xsl:include href="partials/page-home.xslt"/>
 
   <xsl:param name="outputpath" />
+
+  <xsl:variable name="rootSiteNode" select="/site" />
 
   <xsl:template match="/site">
     <xsl:apply-templates select="." mode="htaccess" />

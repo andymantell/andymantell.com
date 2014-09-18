@@ -8,11 +8,11 @@
     <image src="/images/brilliant-project/product-list.jpg" />
   </images>
 
-  <tags>
-    <tag>HTML</tag>
-    <tag>CSS</tag>
-    <tag>JavaScript</tag>
-  </tags>
+  <categories>
+    <category type="technology" name="html" />
+    <category type="technology" name="css" />
+    <category type="technology" name="js" />
+  </categories>
 
   <description>
     <p>Test</p>

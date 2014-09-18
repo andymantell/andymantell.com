@@ -18,6 +18,19 @@
       <xsl:with-param name="body">
         <xsl:apply-templates select="." mode="body" />
       </xsl:with-param>
+
+      <xsl:with-param name="sidebar-right">
+        <xsl:copy-of select="region[@name='sidebar']" />
+
+        <a class="button" href="/CV.pdf">View my CV</a>
+        <a class="button" href="mailto:contact@andymantell.com">Get in touch</a>
+
+        <h2><a href="/blog">Blog</a></h2>
+        <xsl:call-template name="teaser-listing">
+          <xsl:with-param name="type">blogpost</xsl:with-param>
+          <xsl:with-param name="limit">3</xsl:with-param>
+        </xsl:call-template>
+      </xsl:with-param>
     </xsl:call-template>
   </xsl:template>
 
@@ -37,32 +50,13 @@
   <!-- Homepage body content -->
   <!-- ===================================================================== -->
   <xsl:template match="homepage" mode="body">
-    <div class="grid-wrap">
-      <div class="grid-col grid-two-thirds">
-        <xsl:copy-of select="region[@name='content']" />
-      </div>
+    <xsl:copy-of select="region[@name='content']" />
 
-      <div class="grid-col grid-one-third">
-        <xsl:copy-of select="region[@name='sidebar']" />
-      </div>
-    </div>
-
-    <!-- Homepage project teasers -->
-    <xsl:variable name="sortedItems">
-      <xsl:for-each select="/site/project">
-        <xsl:sort select="@sticky" order="descending" />
-        <xsl:sort select="@date" order="descending" />
-        <xsl:if test="not(position() > 6)">
-          <xsl:copy-of select="." />
-        </xsl:if>
-      </xsl:for-each>
-    </xsl:variable>
-
-    <ul class="list-page list-page--gallery">
-      <xsl:for-each select="exsl:node-set($sortedItems)/*">
-        <li class="list-page__item"><xsl:apply-templates select="." mode="teaser" /></li>
-      </xsl:for-each>
-    </ul>
+    <xsl:call-template name="teaser-listing">
+      <xsl:with-param name="type">project</xsl:with-param>
+      <xsl:with-param name="limit">5</xsl:with-param>
+      <xsl:with-param name="modifier">promo-gallery</xsl:with-param>
+    </xsl:call-template>
   </xsl:template>
 
 </xsl:stylesheet>
