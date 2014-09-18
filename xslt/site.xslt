@@ -18,7 +18,7 @@
   <xsl:include href="partials/page-project.xslt"/>
   <xsl:include href="partials/page-client.xslt"/>
   <xsl:include href="partials/page-blogpost.xslt"/>
-  <xsl:include href="partials/homepage.xslt"/>
+  <xsl:include href="partials/page-home.xslt"/>
 
   <xsl:param name="outputpath" />
 

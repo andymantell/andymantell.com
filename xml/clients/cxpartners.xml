@@ -2,7 +2,7 @@
 
 <client title="CX Partners" slug="cx-partners" status="published">
   <logo>
-    <image src="http://placehold.it/300x250" />
+    <image src="/images/clients/cxpartners.png" />
   </logo>
   <description>Description of CX Partners here</description>
 </client>

@@ -67,10 +67,6 @@
           <xsl:apply-templates select="." mode="url" />
         </xsl:attribute>
 
-        <header class="teaser__header">
-          <h2 class="teaser__heading"><xsl:value-of select="@title" /></h2>
-        </header>
-
         <xsl:apply-templates select="logo/image" />
       </a>
     </article>
@@ -84,10 +80,6 @@
         <xsl:attribute name="href">
           <xsl:apply-templates select="." mode="url" />
         </xsl:attribute>
-
-        <header class="teaser__header">
-          <h2 class="teaser__heading"><xsl:value-of select="@title" /></h2>
-        </header>
 
         <xsl:apply-templates select="logo/image" />
       </a>
