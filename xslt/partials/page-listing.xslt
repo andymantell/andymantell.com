@@ -15,7 +15,7 @@
     <xsl:variable name="nodeType" select="@listing" />
 
     <xsl:variable name="sortedItems">
-      <xsl:for-each select="/site/*[local-name() = $nodeType]">
+      <xsl:for-each select="/site/*[local-name() = $nodeType][@status='published']">
         <xsl:sort select="@sticky" order="descending" />
         <xsl:sort select="@date" order="descending" />
         <xsl:copy-of select="." />

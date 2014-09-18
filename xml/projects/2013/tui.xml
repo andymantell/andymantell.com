@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 
-<project title="TUI Travelbound" slug="tui-travelbound" date="2013-05">
+<project title="TUI Travelbound" slug="tui-travelbound" date="2013-05" status="published">
   <images>
-    <image src="http://placehold.it/400x250" />
-    <image teaser="teaser" src="http://placehold.it/400x250" />
-    <image src="http://placehold.it/400x250" />
-    <image src="http://placehold.it/400x250" />
+    <image src="http://placehold.it/400x225" />
+    <image teaser="teaser" src="http://placehold.it/400x225" />
+    <image src="http://placehold.it/400x225" />
+    <image src="http://placehold.it/400x225" />
   </images>
 </project>

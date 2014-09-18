@@ -8,12 +8,24 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-prettify');
   grunt.loadNpmTasks('grunt-aws-s3');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Project configuration.
   grunt.initConfig({
     twitter: grunt.file.readJSON('twitter.json'),
     lastfm: grunt.file.readJSON('lastfm.json'),
     aws: grunt.file.readJSON('aws.json'),
+
+    copy: {
+      main: {
+        files: [
+          {
+            expand: true,
+            src: ['images/**'],
+            dest: 'dist'},
+        ]
+      }
+    },
 
     compass: {
       dist: {
@@ -29,9 +41,15 @@ module.exports = function(grunt) {
         tasks: ['css']
       },
 
+      images: {
+        'files': 'images/**',
+        'tasks': ['images']
+      },
+
       build: {
         files: [
           'xml/**/*.*',
+          '!xml/site.xml',
           'xslt/**/*.*'
         ],
         tasks: ['transform']
@@ -185,7 +203,10 @@ module.exports = function(grunt) {
   grunt.registerTask('fetch', ['get_tweets', 'get_recent_tracks']);
 
   // Transform
-  grunt.registerTask('transform', ['exec:clean', 'concat:xml', 'exec:transform', 'exec:remove_xml', 'exec:logpaths', "prettify"]);
+  grunt.registerTask('transform', ['exec:clean', 'copy', 'concat:xml', 'exec:transform', 'exec:remove_xml', 'exec:logpaths', "prettify"]);
+
+  // Copy images
+  grunt.registerTask('images', ['copy']);
 
   // Compile stylesheets
   grunt.registerTask('css', ['compass']);

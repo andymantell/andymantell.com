@@ -1,10 +1,8 @@
 <?xml version="1.0"?>
 
-<project title="Jisc" slug="jisc" date="2013-07">
+<project title="Jisc" slug="jisc" date="2013-07" status="published">
   <images>
-    <image src="http://placehold.it/400x250" />
-    <image teaser="teaser" src="http://placehold.it/400x250" />
-    <image src="http://placehold.it/400x250" />
-    <image src="http://placehold.it/400x250" />
+    <image teaser="teaser" src="/images/jisc/homepage.jpg" />
+    <image src="/images/jisc/event.jpg" />
   </images>
 </project>

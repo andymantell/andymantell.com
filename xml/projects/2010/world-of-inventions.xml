@@ -2,9 +2,9 @@
 
 <project title="Wallace &amp; Gromit's World of Inventions" slug="wallace-and-gromit-world-of-inventions" date="2010-09">
   <images>
-    <image src="http://placehold.it/400x250" />
-    <image teaser="teaser" src="http://placehold.it/400x250" />
-    <image src="http://placehold.it/400x250" />
-    <image src="http://placehold.it/400x250" />
+    <image src="http://placehold.it/400x225" />
+    <image teaser="teaser" src="http://placehold.it/400x225" />
+    <image src="http://placehold.it/400x225" />
+    <image src="http://placehold.it/400x225" />
   </images>
 </project>
