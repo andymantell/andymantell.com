@@ -16,7 +16,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     privileged: false,
     inline: <<SCRIPT
 grunt --base /vagrant/ --gruntfile /vagrant/Gruntfile.js
-grunt watch --base /vagrant/ --gruntfile /vagrant/Gruntfile.js
+#grunt watch --base /vagrant/ --gruntfile /vagrant/Gruntfile.js
 SCRIPT
 
 end
