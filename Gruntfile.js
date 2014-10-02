@@ -8,6 +8,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-prettify');
   grunt.loadNpmTasks('grunt-aws-s3');
+  grunt.loadNpmTasks('grunt-aws');
   grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Project configuration.
@@ -120,14 +121,14 @@ module.exports = function(grunt) {
         uploadConcurrency: 5,
         downloadConcurrency: 5
       },
-      production: {
-        options: {
-          bucket: '<%= aws.bucket %>'
-        },
-        files: [
-          {expand: true, cwd: 'dist/', src: ['**']}
-        ]
-      },
+      // production: {
+      //   options: {
+      //     bucket: '<%= aws.bucket %>'
+      //   },
+      //   files: [
+      //     {expand: true, cwd: 'dist/', src: ['**']}
+      //   ]
+      // },
       clean_production: {
         options: {
           bucket: '<%= aws.bucket %>',
@@ -135,6 +136,24 @@ module.exports = function(grunt) {
         },
         files: [
           {dest: '/', action: 'delete'}
+        ]
+      }
+    },
+
+    s3: {
+      options: {
+        accessKeyId: '<%= aws.accessKeyId %>',
+        secretAccessKey: '<%= aws.secretAccessKey %>',
+        region: '<%= aws.region %>',
+        bucket: '<%= aws.bucket %>'
+      },
+      production: {
+        files: [
+          {
+            expand: true,
+            cwd: 'dist/',
+            src: ['**']
+          }
         ]
       }
     }
@@ -216,7 +235,7 @@ module.exports = function(grunt) {
 
   // AWS tasks
   grunt.registerTask('clean_production', ['aws_s3:clean_production']);
-  grunt.registerTask('push_production', ['aws_s3:production']);
+  grunt.registerTask('push_production', ['s3:production']);
   grunt.registerTask('refresh_production', ['clean_production', 'push_production']);
 
   // Task to run on cron
