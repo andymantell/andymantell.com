@@ -152,7 +152,10 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: 'dist/',
-            src: ['**']
+            src: [
+              '**',
+              '!**/Thumbs.db'
+            ]
           }
         ]
       }
