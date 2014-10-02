@@ -14,13 +14,13 @@ $grid-columns:  full-width      1,
 $body-link-colour: #000;
 
 // Partials
-@import "partials/typography";
-@import "partials/plain-list";
-@import "partials/grid";
-@import "partials/layout";
-@import "partials/masthead";
-@import "partials/main-menu";
-@import "partials/footer";
-@import "partials/list-page";
-@import "partials/pagination";
-@import "partials/teaser-image";
+@import "partials/utilities/typography";
+@import "partials/listings/plain-list";
+@import "partials/utilities/grid";
+@import "partials/utilities/layout";
+@import "partials/global/masthead";
+@import "partials/global/main-menu";
+@import "partials/global/footer";
+@import "partials/listings/list-page";
+@import "partials/listings/pagination";
+@import "partials/listings/teaser-image";

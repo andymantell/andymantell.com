@@ -1,0 +1,11 @@
+/**
+ * Add top padding and margin to the footer to space it out from the
+ * element that's above it. If I don't do this then it will be too
+ * close. There's not a lot else I can say about this but I know if
+ * I write more lines of comments than code then that makes me a
+ * Good Developer.
+ */
+.footer {
+  padding-top: 20px;
+  margin-top: 60px;
+}
