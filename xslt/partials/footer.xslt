@@ -24,9 +24,17 @@
       </div>
 
       <div class="grid-col grid-one-third">
-        <p>Contact</p>
-        <p>Form</p>
-        <p>Here</p>
+        <form method="POST" action="//forms.brace.io/contact@andymantell.com">
+
+          <label for="email">Email address</label>
+          <input required="required" type="email" id="email" name="_replyto" />
+
+          <label for="message">Message</label>
+          <textarea required="required" name="message" id="message"></textarea>
+
+          <input type="submit" value="Send" />
+
+        </form>
       </div>
 
     </div>
