@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<project title="Jisc" slug="jisc" date="2013-07" status="published">
+<project title="Jisc" slug="jisc" date="2013-07" status="published" client="cx-partners">
   <images>
     <image teaser="teaser" src="/images/jisc/homepage.jpg" />
     <image src="/images/jisc/event.jpg" />

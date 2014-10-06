@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<project title="XLN" slug="xln" date="2014-03" status="published">
+<project title="XLN" slug="xln" date="2014-03" status="published" client="cx-partners">
   <images>
     <image src="http://placehold.it/400x225" />
     <image teaser="teaser" src="http://placehold.it/400x225" />

@@ -39,8 +39,13 @@
   <!-- Project page url -->
   <!-- ===================================================================== -->
   <xsl:template match="project" mode="url">
-    <xsl:text>/</xsl:text>
-    <xsl:value-of select="concat('projects/', @client, '/', @slug)" />
+    <xsl:text>/projects/</xsl:text>
+
+    <xsl:if test="@client">
+      <xsl:value-of select="concat(@client, '/')" />
+    </xsl:if>
+
+    <xsl:value-of select="@slug" />
   </xsl:template>
 
   <!-- Project page body content -->
