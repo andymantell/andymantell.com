@@ -242,6 +242,6 @@ module.exports = function(grunt) {
   grunt.registerTask('refresh_production', ['clean_production', 'push_production']);
 
   // Task to run on cron
-  grunt.registerTask('cron', ['rebuild', 'refresh_production']);
+  grunt.registerTask('cron', ['rebuild', 'push_production']);
 
 };
