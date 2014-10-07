@@ -53,7 +53,7 @@
     <xsl:copy-of select="region[@name='content']" />
 
     <xsl:call-template name="teaser-listing">
-      <xsl:with-param name="type">project</xsl:with-param>
+      <xsl:with-param name="items" select="/site/project" />
       <xsl:with-param name="limit">5</xsl:with-param>
       <xsl:with-param name="modifier">promo-gallery</xsl:with-param>
     </xsl:call-template>

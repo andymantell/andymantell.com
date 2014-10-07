@@ -76,6 +76,7 @@
           <xsl:with-param name="page_number" select="$page_number" />
           <xsl:with-param name="total_items" select="$total_items" />
           <xsl:with-param name="total_pages" select="$total_pages" />
+          <xsl:with-param name="rpp" select="$rpp" />
         </xsl:apply-templates>
       </xsl:with-param>
     </xsl:call-template>
@@ -96,6 +97,24 @@
   </xsl:template>
 
   <xsl:template name="pager">
+    <xsl:param name="page" />
+    <xsl:param name="page_number" />
+    <xsl:param name="total_items" />
+    <xsl:param name="total_pages" />
+    <xsl:param name="rooturl" />
+
+    <ul class="pager">
+      <xsl:call-template name="pager_item">
+        <xsl:with-param name="rooturl" select="$rooturl" />
+        <xsl:with-param name="page" select="1" />
+        <xsl:with-param name="page_number" select="$page_number" />
+        <xsl:with-param name="total_items" select="$total_items" />
+        <xsl:with-param name="total_pages" select="$total_pages" />
+      </xsl:call-template>
+    </ul>
+  </xsl:template>
+
+  <xsl:template name="pager_item">
     <xsl:param name="page" />
     <xsl:param name="page_number" />
     <xsl:param name="total_items" />
@@ -126,7 +145,7 @@
     </li>
 
     <xsl:if test="$page &lt; $total_pages">
-      <xsl:call-template name="pager">
+      <xsl:call-template name="pager_item">
         <xsl:with-param name="page" select="$page + 1" />
         <xsl:with-param name="page_number" select="$page_number" />
         <xsl:with-param name="total_items" select="$total_items" />
@@ -155,14 +174,9 @@
     <xsl:param name="page_number" />
     <xsl:param name="total_items" />
     <xsl:param name="total_pages" />
+    <xsl:param name="rpp" />
 
-    <ul class="list-page list-page--gallery">
-      <xsl:for-each select="$items">
-        <li class="list-page__item"><xsl:apply-templates select="." mode="teaser" /></li>
-      </xsl:for-each>
-    </ul>
-
-    <ul class="pager">
+    <xsl:variable name="pager">
       <xsl:call-template name="pager">
         <xsl:with-param name="rooturl">
           <xsl:apply-templates select="." mode="url" />
@@ -172,7 +186,18 @@
         <xsl:with-param name="total_items" select="$total_items" />
         <xsl:with-param name="total_pages" select="$total_pages" />
       </xsl:call-template>
-    </ul>
+    </xsl:variable>
+
+    <xsl:copy-of select="$pager" />
+
+    <xsl:call-template name="teaser-listing">
+      <xsl:with-param name="items" select="$items" />
+      <xsl:with-param name="limit" select="$rpp" />
+      <xsl:with-param name="modifier">gallery</xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:copy-of select="$pager" />
+
   </xsl:template>
 
 </xsl:stylesheet>

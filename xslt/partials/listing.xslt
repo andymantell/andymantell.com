@@ -10,12 +10,12 @@
   <!-- Listing of teasers -->
   <!-- ===================================================================== -->
   <xsl:template name="teaser-listing">
-    <xsl:param name="type" />
+    <xsl:param name="items" />
     <xsl:param name="limit" />
     <xsl:param name="modifier" />
 
     <xsl:variable name="sortedItems">
-      <xsl:for-each select="/site/*[local-name() = $type][@status='published']">
+      <xsl:for-each select="exsl:node-set($items)[@status='published']">
         <xsl:sort select="@sticky" order="descending" />
         <xsl:sort select="@date" order="descending" />
 

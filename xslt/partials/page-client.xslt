@@ -40,22 +40,11 @@
   <xsl:template match="client" mode="body">
     <xsl:copy-of select="region[@name='content']" />
 
-    <!-- Project teasers -->
-    <xsl:variable name="sortedItems">
-      <xsl:for-each select="/site/project[@client='cx-partners']">
-        <xsl:sort select="@sticky" order="descending" />
-        <xsl:sort select="@date" order="descending" />
-        <xsl:if test="not(position() > 6)">
-          <xsl:copy-of select="." />
-        </xsl:if>
-      </xsl:for-each>
-    </xsl:variable>
-
-    <ul class="list-page list-page--gallery">
-      <xsl:for-each select="exsl:node-set($sortedItems)/*">
-        <li class="list-page__item"><xsl:apply-templates select="." mode="teaser" /></li>
-      </xsl:for-each>
-    </ul>
+    <xsl:call-template name="teaser-listing">
+      <xsl:with-param name="items" select="/site/project[@client='cx-partners']" />
+      <xsl:with-param name="limit">6</xsl:with-param>
+      <xsl:with-param name="modifier">gallery</xsl:with-param>
+    </xsl:call-template>
   </xsl:template>
 
   <!-- Client teasers as found on list pages -->

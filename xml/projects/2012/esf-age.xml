@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<project title="ESF Age" slug="esf-age" date="2012-06">
+<project title="ESF Age" slug="esf-age" status="published" date="2012-06">
   <images>
     <image src="http://placehold.it/400x225" />
     <image teaser="teaser" src="http://placehold.it/400x225" />

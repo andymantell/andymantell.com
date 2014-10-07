@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<project title="BSI" slug="bsi" date="2012-08" client="cx-partners">
+<project title="BSI" slug="bsi" date="2012-08" status="published" client="cx-partners">
   <images>
     <image src="http://placehold.it/400x225" />
     <image teaser="teaser" src="http://placehold.it/400x225" />
