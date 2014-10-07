@@ -70,27 +70,6 @@ module.exports = function(grunt) {
       }
     },
 
-    prettify: {
-      options: {
-        "indent": 2,
-        "condense": true,
-        "indent_inner_html": true,
-        "unformatted": [
-          "a",
-          "code",
-          "pre",
-          "p"
-        ]
-      },
-      all: {
-        expand: true,
-        cwd: 'dist/',
-        ext: '.html',
-        src: ['**/*.html'],
-        dest: 'dist/'
-      },
-    },
-
     exec: {
       transform: {
         cmd: 'xsltproc --stringparam outputpath dist/ xslt/site.xslt xml/site.xml'
@@ -104,6 +83,22 @@ module.exports = function(grunt) {
       logpaths: {
         cmd: 'echo "Output structure:"; ls dist/* -R | grep ":$" | sed -e \'s/:$//\' -e \'s/[^-][^\\/]*\\//--/g\' -e \'s/^/   /\' -e \'s/-/|/\''
       }
+    },
+
+    htmlmin: {
+      dist: {
+        options: {
+          removeComments: true,
+          collapseWhitespace: true
+        },
+        files: [{
+          expand: true,
+          cwd: 'dist/',
+          ext: '.html',
+          src: ['**/*.html'],
+          dest: 'dist/'
+        }]
+      },
     },
 
     aws_s3: {
@@ -165,7 +160,7 @@ module.exports = function(grunt) {
   grunt.registerTask('fetch', ['get_tweets', 'get_recent_tracks']);
 
   // Transform
-  grunt.registerTask('transform', ['exec:clean', 'copy', 'concat:xml', 'exec:transform', 'exec:remove_xml', 'exec:logpaths', "prettify"]);
+  grunt.registerTask('transform', ['exec:clean', 'copy', 'concat:xml', 'exec:transform', 'exec:remove_xml', 'exec:logpaths', 'htmlmin']);
 
   // Copy images
   grunt.registerTask('images', ['copy']);
