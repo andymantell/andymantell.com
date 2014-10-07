@@ -19,7 +19,7 @@
   <!-- ===================================================================== -->
   <xsl:template match="recent_tweets/tweet">
     <li class="plain-list__item">
-      <xsl:value-of select="text" />
+      <xsl:copy-of select="text" />
     </li>
   </xsl:template>
 

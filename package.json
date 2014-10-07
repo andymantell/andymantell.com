@@ -23,6 +23,7 @@
     "grunt-prettify": "~0.3.4",
     "grunt-aws-s3": "~0.8.5",
     "grunt-contrib-copy": "~0.6.0",
-    "grunt-aws": "~0.3.0"
+    "grunt-aws": "~0.3.0",
+    "twitter-text": "~1.9.4"
   }
 }
