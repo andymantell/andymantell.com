@@ -7,8 +7,8 @@
   exclude-result-prefixes="exsl"
   version="1.0">
 
-  <xsl:include href="recent_tweets.xslt"/>
-  <xsl:include href="recent_tracks.xslt"/>
+  <xsl:include href="../blocks/recent_tweets.xslt"/>
+  <xsl:include href="../blocks/recent_tracks.xslt"/>
 
   <!-- Page footer -->
   <!-- ===================================================================== -->

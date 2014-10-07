@@ -7,20 +7,21 @@
   exclude-result-prefixes="exsl"
   version="1.0">
 
-  <xsl:include href="partials/utils.xslt"/>
-  <xsl:include href="partials/listing.xslt"/>
-  <xsl:include href="partials/categories.xslt"/>
+  <xsl:include href="partials/utilities/image.xslt"/>
+  <xsl:include href="partials/utilities/listing.xslt"/>
+  <xsl:include href="partials/utilities/listpage.xslt"/>
+  <xsl:include href="partials/utilities/categories.xslt"/>
+  <xsl:include href="partials/utilities/htaccess.xslt"/>
 
-  <xsl:include href="partials/htaccess.xslt"/>
-  <xsl:include href="partials/html.xslt"/>
-  <xsl:include href="partials/main-menu.xslt"/>
-  <xsl:include href="partials/footer.xslt"/>
-  <xsl:include href="partials/page-basic.xslt"/>
-  <xsl:include href="partials/page-listing.xslt"/>
-  <xsl:include href="partials/page-project.xslt"/>
-  <xsl:include href="partials/page-client.xslt"/>
-  <xsl:include href="partials/page-blogpost.xslt"/>
-  <xsl:include href="partials/page-home.xslt"/>
+  <xsl:include href="partials/global/html.xslt"/>
+  <xsl:include href="partials/global/main-menu.xslt"/>
+  <xsl:include href="partials/global/footer.xslt"/>
+
+  <xsl:include href="partials/content-types/page.xslt"/>
+  <xsl:include href="partials/content-types/project.xslt"/>
+  <xsl:include href="partials/content-types/client.xslt"/>
+  <xsl:include href="partials/content-types/blogpost.xslt"/>
+  <xsl:include href="partials/content-types/homepage.xslt"/>
 
   <xsl:param name="outputpath" />
 
