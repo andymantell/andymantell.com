@@ -15,7 +15,7 @@
 
     <nav class="main-menu">
       <xsl:call-template name="main_menu_items">
-        <xsl:with-param name="pages" select="/site/page" />
+        <xsl:with-param name="pages" select="/site/page[not(@hidden)]" />
         <xsl:with-param name="level" select="1" />
         <xsl:with-param name="current_page" select="$current_page" />
       </xsl:call-template>
