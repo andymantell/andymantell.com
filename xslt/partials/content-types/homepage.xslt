@@ -27,7 +27,7 @@
 
         <h2><a href="/blog">Blog</a></h2>
         <xsl:call-template name="teaser-listing">
-          <xsl:with-param name="type">blogpost</xsl:with-param>
+          <xsl:with-param name="items" select="/site/blogpost" />
           <xsl:with-param name="limit">3</xsl:with-param>
         </xsl:call-template>
       </xsl:with-param>
