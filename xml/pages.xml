@@ -24,12 +24,6 @@
 
 </page>
 
-<page title="Another page" path="another-page/here/foo/bar">
-  <region name="content">
-    <p>Another page</p>
-  </region>
-</page>
-
 <page title="Projects" path="projects" listing="project" rpp="9">
 
   <page title="Clients" path="projects/clients" listing="client" rpp="9" />
