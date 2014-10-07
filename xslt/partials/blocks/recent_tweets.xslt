@@ -11,16 +11,20 @@
   <!-- ===================================================================== -->
   <xsl:template name="recent_tweets">
     <ul class="plain-list">
-      <xsl:apply-templates select="document('../../../xml/recent_tweets.xml')"/>
+      <xsl:apply-templates select="document('../../../xml/recent_tweets.xml')" />
     </ul>
   </xsl:template>
 
   <!-- Recent tweets: individual tweet -->
   <!-- ===================================================================== -->
-  <xsl:template match="recent_tweets/tweet">
+  <xsl:template match="tweet">
     <li class="plain-list__item">
-      <xsl:copy-of select="text" />
+      <xsl:value-of select="text" disable-output-escaping="yes" />
     </li>
   </xsl:template>
+
+  <!-- We only want 4 tweets, do nothing with the rest of them -->
+  <!-- ===================================================================== -->
+  <xsl:template match="tweet[position() > 4]" />
 
 </xsl:stylesheet>

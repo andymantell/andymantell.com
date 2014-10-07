@@ -19,9 +19,9 @@ module.exports = function(grunt) {
 
       data.forEach(function(item) {
         recent_tweets.recent_tweets.push({tweet: {
-          text: twitter_text.autoLink(twitter_text.htmlEscape(item.text), {
+          text: twitter_text.htmlEscape(twitter_text.autoLink(twitter_text.htmlEscape(item.text), {
             urlEntities: item.entities.urls
-          })
+          }))
         }});
       });
 
