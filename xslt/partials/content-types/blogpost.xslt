@@ -31,6 +31,7 @@
   <xsl:template match="blogpost" mode="url">
     <xsl:text>/</xsl:text>
     <xsl:value-of select="concat('blog/', @slug)" />
+    <xsl:text>/</xsl:text>
   </xsl:template>
 
   <!-- Blog post body content -->

@@ -34,6 +34,7 @@
   <xsl:template match="page[not(@listing)]" mode="url">
     <xsl:text>/</xsl:text>
     <xsl:value-of select="@path" />
+    <xsl:text>/</xsl:text>
   </xsl:template>
 
   <!-- Basic page body content -->

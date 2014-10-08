@@ -45,6 +45,7 @@
   <xsl:template match="homepage" mode="url">
     <xsl:text>/</xsl:text>
     <xsl:value-of select="@path" />
+    <xsl:text>/</xsl:text>
   </xsl:template>
 
   <!-- Homepage body content -->

@@ -165,6 +165,7 @@
   <xsl:template match="page[@listing]" mode="url">
     <xsl:text>/</xsl:text>
     <xsl:value-of select="@path" />
+    <xsl:text>/</xsl:text>
   </xsl:template>
 
   <!-- Listing page body content -->

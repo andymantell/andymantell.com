@@ -46,6 +46,8 @@
     </xsl:if>
 
     <xsl:value-of select="@slug" />
+
+    <xsl:text>/</xsl:text>
   </xsl:template>
 
   <!-- Project page body content -->

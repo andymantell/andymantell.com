@@ -33,6 +33,7 @@
   <xsl:template match="client" mode="url">
     <xsl:text>/</xsl:text>
     <xsl:value-of select="concat('projects/', @slug)" />
+    <xsl:text>/</xsl:text>
   </xsl:template>
 
   <!-- Client page body content -->
