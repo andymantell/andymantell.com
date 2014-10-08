@@ -31,7 +31,8 @@
     "grunt-contrib-jshint": "~0.10.0"
   },
   "dependencies": {
-    "superagent": "~0.20.0",
-    "conduct": "git+https://git@github.com/andymantell/conduct.js.git"
+    "conduct": "git+https://git@github.com/andymantell/conduct.js.git",
+    "form-serialize": "~0.3.0",
+    "reqwest": "~1.1.2"
   }
 }

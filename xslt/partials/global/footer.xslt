@@ -25,9 +25,6 @@
 
       <div class="grid-col grid-one-third">
         <xsl:call-template name="contact_form" />
-        <br /><br />
-        <xsl:call-template name="contact_form" />
-
       </div>
 
     </div>
