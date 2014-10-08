@@ -2,6 +2,8 @@
 module.exports = function(grunt) {
   'use strict';
 
+  var moment = require('moment');
+
   require('load-grunt-tasks')(grunt);
 
   // Project configuration.
@@ -175,15 +177,39 @@ module.exports = function(grunt) {
         accessKeyId: '<%= aws.accessKeyId %>',
         secretAccessKey: '<%= aws.secretAccessKey %>',
         region: '<%= aws.region %>',
-        bucket: '<%= aws.bucket %>'
+        bucket: '<%= aws.bucket %>',
+        headers: {
+          CacheControl: 'public',
+          Expires: moment().add(1, 'year').toDate()
+        }
       },
-      production: {
+      assets: {
+        files: [
+          {
+            expand: true,
+            cwd: 'dist/',
+            src: [
+              'assets/**',
+              'images/**',
+              '!**/Thumbs.db'
+            ]
+          }
+        ]
+      },
+      html: {
+        options: {
+          headers: {
+            Expires: moment().add(1, 'day').toDate()
+          }
+        },
         files: [
           {
             expand: true,
             cwd: 'dist/',
             src: [
               '**',
+              '!assets/**',
+              '!images/**',
               '!**/Thumbs.db'
             ]
           }
@@ -219,7 +245,7 @@ module.exports = function(grunt) {
 
   // AWS tasks
   grunt.registerTask('clean_production', ['aws_s3:clean_production']);
-  grunt.registerTask('push_production', ['s3:production']);
+  grunt.registerTask('push_production', ['s3']);
   grunt.registerTask('refresh_production', ['clean_production', 'push_production']);
 
   // Task to run on cron
