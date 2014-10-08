@@ -37,7 +37,7 @@ module.exports = function(grunt) {
 
       javascript: {
         files: 'assets/js/**/*.js',
-        tasks: ['browserify:dev']
+        tasks: ['js:dev']
       },
 
       images: {
@@ -88,6 +88,15 @@ module.exports = function(grunt) {
       logpaths: {
         cmd: 'echo "Output structure:"; ls dist/* -R | grep ":$" | sed -e \'s/:$//\' -e \'s/[^-][^\\/]*\\//--/g\' -e \'s/^/   /\' -e \'s/-/|/\''
       }
+    },
+
+    jshint: {
+      options: {
+        jshintrc: '.jshintrc'
+      },
+      files: [
+        'assets/**/*.js'
+      ]
     },
 
     browserify: {
@@ -203,6 +212,7 @@ module.exports = function(grunt) {
 
   // Build JS
   grunt.registerTask('js', ['browserify:prod']);
+  grunt.registerTask('js:dev', ['jshint', 'browserify:dev']);
 
   // Build
   grunt.registerTask('rebuild', ['fetch', 'transform', 'css', 'js']);
