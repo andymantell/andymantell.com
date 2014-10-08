@@ -1,2 +1,2 @@
-var contact_form = require('./modules/contact-form');
-contact_form();
+var ajax_form = require('./modules/ajax-form');
+ajax_form(document.querySelectorAll('.js-ajaxify-form'));

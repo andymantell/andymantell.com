@@ -13,6 +13,8 @@
   <xsl:include href="partials/utilities/categories.xslt"/>
   <xsl:include href="partials/utilities/htaccess.xslt"/>
 
+  <xsl:include href="partials/forms/contact-form.xslt"/>
+
   <xsl:include href="partials/global/html.xslt"/>
   <xsl:include href="partials/global/main-menu.xslt"/>
   <xsl:include href="partials/global/footer.xslt"/>

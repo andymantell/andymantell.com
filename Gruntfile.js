@@ -37,7 +37,7 @@ module.exports = function(grunt) {
 
       javascript: {
         files: 'assets/js/**/*.js',
-        tasks: ['js']
+        tasks: ['browserify:dev']
       },
 
       images: {
@@ -91,7 +91,27 @@ module.exports = function(grunt) {
     },
 
     browserify: {
-      dist: {
+      options: {
+        transform: [
+          [
+            'uglifyify',
+            {
+              global: true
+            }
+          ]
+        ]
+      },
+      dev: {
+        files: {
+          'dist/assets/js/main.js': ['assets/js/main.js'],
+        },
+        options: {
+          // browserifyOptions: {
+          //   debug: true
+          // },
+        }
+      },
+      prod: {
         files: {
           'dist/assets/js/main.js': ['assets/js/main.js'],
         }
@@ -182,7 +202,7 @@ module.exports = function(grunt) {
   grunt.registerTask('css', ['compass']);
 
   // Build JS
-  grunt.registerTask('js', ['browserify']);
+  grunt.registerTask('js', ['browserify:prod']);
 
   // Build
   grunt.registerTask('rebuild', ['fetch', 'transform', 'css', 'js']);
