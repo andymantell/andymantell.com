@@ -31,8 +31,13 @@ module.exports = function(grunt) {
 
     watch: {
       scss: {
-        files: 'assets/**/*.scss',
+        files: 'assets/scss/**/*.scss',
         tasks: ['css']
+      },
+
+      javascript: {
+        files: 'assets/js/**/*.js',
+        tasks: ['js']
       },
 
       images: {
@@ -82,6 +87,14 @@ module.exports = function(grunt) {
       },
       logpaths: {
         cmd: 'echo "Output structure:"; ls dist/* -R | grep ":$" | sed -e \'s/:$//\' -e \'s/[^-][^\\/]*\\//--/g\' -e \'s/^/   /\' -e \'s/-/|/\''
+      }
+    },
+
+    browserify: {
+      dist: {
+        files: {
+          'dist/assets/js/main.js': ['assets/js/main.js'],
+        }
       }
     },
 
@@ -168,8 +181,11 @@ module.exports = function(grunt) {
   // Compile stylesheets
   grunt.registerTask('css', ['compass']);
 
+  // Build JS
+  grunt.registerTask('js', ['browserify']);
+
   // Build
-  grunt.registerTask('rebuild', ['fetch', 'transform', 'css']);
+  grunt.registerTask('rebuild', ['fetch', 'transform', 'css', 'js']);
 
   // AWS tasks
   grunt.registerTask('clean_production', ['aws_s3:clean_production']);

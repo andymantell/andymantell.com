@@ -65,6 +65,8 @@
               <xsl:call-template name="footer" />
             </div>
           </footer>
+
+          <script src="/assets/js/main.js"></script>
         </body>
 
       </html>

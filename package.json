@@ -25,6 +25,7 @@
     "grunt-aws": "~0.3.0",
     "twitter-text": "~1.9.4",
     "load-grunt-tasks": "~0.6.0",
-    "grunt-contrib-htmlmin": "~0.3.0"
+    "grunt-contrib-htmlmin": "~0.3.0",
+    "grunt-browserify": "~3.0.1"
   }
 }
