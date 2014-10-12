@@ -1,28 +1,31 @@
 'use strict';
 
-/**
- * Breakpoint specific functionality
- */
+var settings = require('../settings');
 var conduct = require('conduct.js');
+
 conduct(
   {
     'media_queries':
     [
       {
-        query: '(max-width: 600px)',
+        query: settings.breakpoints.mobile,
         match: function() {
+          console.log('menu entering mobile state');
           // This code will run when this media query moves from an unmatched state to a matched state
         },
         unmatch: function() {
+          console.log('menu leaving mobile state');
           // This code will run when this media query moves from a matched state to an unmatched state
         }
       },
       {
-        query: '(min-width: 601px)',
+        query: settings.breakpoints.desktop,
         match: function() {
+          console.log('menu entering desktop state');
           // This code will run when this media query moves from an unmatched state to a matched state
         },
         unmatch: function() {
+          console.log('menu leaving desktop state');
           // This code will run when this media query moves from a matched state to an unmatched state
         }
       },
@@ -31,9 +34,4 @@ conduct(
   }
 );
 
-
-/**
- * Global functionality
- */
-var ajax_form = require('./modules/ajax-form');
-ajax_form(document.querySelectorAll('.js-ajaxify-form'));
+module.exports = function() {};

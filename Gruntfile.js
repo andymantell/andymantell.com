@@ -102,20 +102,12 @@ module.exports = function(grunt) {
     },
 
     browserify: {
-      options: {
-        transform: [
-          [
-            'uglifyify',
-            {
-              global: true
-            }
-          ]
-        ]
+      options: {},
+      files: {
+        'dist/assets/js/main.js': ['assets/js/controllers/**/*.js'],
       },
       dev: {
-        files: {
-          'dist/assets/js/main.js': ['assets/js/main.js'],
-        },
+        files: '<%= browserify.files %>',
         options: {
           // browserifyOptions: {
           //   debug: true
@@ -123,8 +115,16 @@ module.exports = function(grunt) {
         }
       },
       prod: {
-        files: {
-          'dist/assets/js/main.js': ['assets/js/main.js'],
+        files: '<%= browserify.files %>',
+        options: {
+          transform: [
+            [
+              'uglifyify',
+              {
+                global: true
+              }
+            ]
+          ]
         }
       }
     },
