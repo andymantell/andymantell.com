@@ -7,7 +7,7 @@ fetch:
 
 transform:
   - exec:clean
-  - copy
+  - images
   - concat:xml
   - exec:transform
   - exec:remove_xml
@@ -15,7 +15,7 @@ transform:
   - htmlmin
 
 images:
-  - copy
+  - imagemin
 
 css:
   - sass
