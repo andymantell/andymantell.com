@@ -33,12 +33,12 @@ module.exports = function(grunt) {
 
     watch: {
       scss: {
-        files: 'assets/scss/**/*.scss',
+        files: 'src/**/*.scss',
         tasks: ['css']
       },
 
       javascript: {
-        files: 'assets/js/**/*.js',
+        files: 'src/**/*.js',
         tasks: ['js:dev']
       },
 
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
         files: [
           'xml/**/*.*',
           '!xml/site.xml',
-          'xslt/**/*.*'
+          'src/**/*.xslt'
         ],
         tasks: ['transform']
       }
