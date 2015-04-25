@@ -2,6 +2,18 @@
   background-color: $color-button-bg;
   color: $color-button-fg;
   display: inline-block;
-  padding: 5px 15px;
+  padding: 8px 15px;
   margin-right: $grid-gutter;
+  text-decoration: none;
+  border-radius: 2px;
+  flex-grow: 1;
+  text-align: center;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    background-color: darken($color-button-bg, 10%);
+  }
 }

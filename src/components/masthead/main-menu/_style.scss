@@ -1,6 +1,5 @@
 .main-menu {
   font-size: 20px;
-  clear: both;
 
   a {
     text-decoration: none;
@@ -16,7 +15,7 @@
  * Top level
  */
 .main-menu__level-1 {
-  @include cf;
+  float: right;
   position: relative;
   line-height: 50px;
 }

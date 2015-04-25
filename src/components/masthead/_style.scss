@@ -1,12 +1,10 @@
 .masthead {
   margin-bottom: 20px;
   @include cf;
-  border-bottom: 1px solid $color-grey;
-
 }
 
   .masthead__logo {
-    font-size: 60px;
+    font-size: 50px;
     color: #000;
     text-decoration: none;
     font-family: sans-serif;

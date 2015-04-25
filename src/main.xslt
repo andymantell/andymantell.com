@@ -12,6 +12,7 @@
   <xsl:include href="components/image/template.xslt"/>
   <xsl:include href="components/listing/template.xslt"/>
   <xsl:include href="components/list-page/template.xslt"/>
+  <xsl:include href="components/panel/template.xslt"/>
   <xsl:include href="components/categories/template.xslt"/>
   <xsl:include href="components/htaccess/template.xslt"/>
 

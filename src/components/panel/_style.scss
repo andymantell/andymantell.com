@@ -1,0 +1,15 @@
+.panel {
+  margin-bottom: 25px;
+
+  &__title {
+    font-size: 25px;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &__content {
+    display: flex;
+  }
+}
