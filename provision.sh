@@ -2,7 +2,7 @@
 
 # Install dependencies
 sudo apt-get update
-sudo apt-get install -y apache2 xsltproc ruby-full build-essential libssl-dev nodejs-legacy npm
+sudo apt-get install -y apache2 xsltproc ruby-full build-essential libssl-dev nodejs-legacy npm git
 
 
 # Installing nodejs

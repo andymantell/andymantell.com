@@ -11,13 +11,13 @@
 %list-page--gallery {
   @media (min-width: 600px) {
     margin-left: -$grid-gutter;
-    @include pie-clearfix;
+    @include cf;
   }
 
   .list-page__item {
     @media (min-width: 600px) {
       float: left;
-      @include box-sizing(border-box);
+      box-sizing: border-box;
       padding-left: $grid-gutter;
       width: 1 / 2 * 100%;
     }

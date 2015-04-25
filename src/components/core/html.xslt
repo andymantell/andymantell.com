@@ -21,7 +21,7 @@
         <head>
           <title><xsl:apply-templates select="." mode="title" /></title>
           <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'/>
-          <link rel="stylesheet" href="/assets/css/style.css" />
+          <link rel="stylesheet" href="/assets/css/main.css" />
         </head>
 
         <body>

@@ -33,7 +33,7 @@ $grid-columns: full-width 1, one-half 1/2!default;
 
   .#{$namespace}#{$grid-wrap-class} {
     margin-left: -$grid-gutter; // the same as your gutter
-    @include pie-clearfix;
+    @include cf;
 
     .lt-ie8 & {
       margin-left: 0;
@@ -45,7 +45,7 @@ $grid-columns: full-width 1, one-half 1/2!default;
     clear: none; // @TODO: Necessary?
     padding-left: $grid-gutter; // the gutter between columns
     width: 100%;
-    @include box-sizing(border-box);
+    box-sizing: border-box;
     position: relative; // for push/pull
 
     .lt-ie8 & {

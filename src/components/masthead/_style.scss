@@ -1,6 +1,6 @@
 .masthead {
   margin-bottom: 20px;
-  @include pie-clearfix;
+  @include cf;
   border-bottom: 1px solid $color-grey;
 
 }

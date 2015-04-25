@@ -18,7 +18,7 @@ images:
   - copy
 
 css:
-  - compass
+  - sass
 
 js:
   - browserify:prod
