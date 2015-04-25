@@ -19,9 +19,8 @@
     "jsontoxml": "0.0.11",
     "request": "~2.27.0",
     "grunt-contrib-concat": "~0.3.0",
-    "grunt-aws-s3": "~0.8.5",
+    "grunt-aws-s3": "~0.13.0",
     "grunt-contrib-copy": "~0.6.0",
-    "grunt-aws": "~0.3.0",
     "twitter-text": "~1.9.4",
     "load-grunt-tasks": "~0.6.0",
     "grunt-contrib-htmlmin": "~0.3.0",
@@ -32,7 +31,8 @@
     "browserify": "~6.0.3",
     "load-grunt-config": "~0.17.1",
     "time-grunt": "~1.1.1",
-    "grunt-sass": "~0.18.1"
+    "grunt-sass": "~0.18.1",
+    "grunt-contrib-compress": "~0.13.0"
   },
   "dependencies": {
     "form-serialize": "~0.3.0",

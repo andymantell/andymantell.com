@@ -38,7 +38,8 @@ clean_production:
   - aws_s3:clean_production
 
 push_production:
-  - s3
+  - compress
+  - aws_s3:push_production
 
 refresh_production:
   - clean_production
