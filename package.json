@@ -14,7 +14,6 @@
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt-contrib-compass": "~0.6.0",
     "grunt-exec": "~0.4.2",
     "twitter-1.1": "~0.1.18",
     "jsontoxml": "0.0.11",
@@ -32,7 +31,8 @@
     "moment": "~2.8.3",
     "browserify": "~6.0.3",
     "load-grunt-config": "~0.17.1",
-    "time-grunt": "~1.1.1"
+    "time-grunt": "~1.1.1",
+    "grunt-sass": "~0.18.1"
   },
   "dependencies": {
     "conduct": "git+https://git@github.com/andymantell/conduct.js.git",
