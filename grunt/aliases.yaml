@@ -19,6 +19,7 @@ images:
 
 css:
   - sass
+  - autoprefixer
 
 js:
   - browserify:prod
