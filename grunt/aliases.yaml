@@ -41,7 +41,8 @@ clean_production:
 
 push_production:
   - compress
-  - aws_s3:push_production
+  - aws_s3:push_production_assets
+  - aws_s3:push_production_html
 
 refresh_production:
   - rebuild
