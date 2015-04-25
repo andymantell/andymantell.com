@@ -3,17 +3,17 @@
 /node_modules
 /.sass-cache
 /dist
-/aws.json
-/xml/recent_tweets.xml
-/twitter.json
 
+/aws.json
+/twitter.json
 /lastfm.json
-/xml/recent_tracks.xml
-/xml/site.xml
 
 /.dropbox
-
 /desktop.ini
 /.vagrant
 Thumbs.db
 npm-debug.log
+
+/xml/recent-tracks.xml
+/xml/recent-tweets.xml
+/xml/site.xml
