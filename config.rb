@@ -1,6 +1,6 @@
 http_path = "/"
 css_dir = "dist/assets/css"
-sass_dir = "src/components"
+sass_dir = "src"
 images_dir = "assets/images"
 generated_images_dir = "dist/assets/images"
 

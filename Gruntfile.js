@@ -79,7 +79,7 @@ module.exports = function(grunt) {
 
     exec: {
       transform: {
-        cmd: 'xsltproc --stringparam outputpath dist/ src/components/core/site.xslt xml/site.xml'
+        cmd: 'xsltproc --stringparam outputpath dist/ src/main.xslt xml/site.xml'
       },
       remove_xml: {
         cmd: 'rm xml/site.xml'
