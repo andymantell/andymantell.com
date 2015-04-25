@@ -108,8 +108,8 @@
               <xsl:apply-templates select="." mode="url" />
 
               <xsl:if test="$page &gt; 1">
-                <xsl:text>/</xsl:text>
                 <xsl:value-of select="$page" />
+                <xsl:text>/</xsl:text>
               </xsl:if>
             </xsl:attribute>
             <xsl:value-of select="$page" />
