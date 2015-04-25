@@ -108,11 +108,7 @@ module.exports = function(grunt) {
       },
       dev: {
         files: '<%= browserify.files %>',
-        options: {
-          // browserifyOptions: {
-          //   debug: true
-          // },
-        }
+        options: {}
       },
       prod: {
         files: '<%= browserify.files %>',

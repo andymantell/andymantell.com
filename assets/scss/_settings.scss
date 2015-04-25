@@ -1,0 +1,34 @@
+/**
+ * Grid
+ */
+$grid-gutter: 20 / 16 * 1rem;
+$grid-columns:  full-width      1,
+                one-half        1/2,
+                one-third       1/3,
+                two-thirds      2/3,
+                one-quarter     1/4,
+                three-quarters  3/4;
+
+/**
+ * Colours
+ */
+
+// Main scheme
+$color-primary: #afe3ff;
+$color-primary-light: #c9ecff;
+$color-primary-dark: #6999b2;
+$color-complementary: #b28b57;
+$color-complementary-light: #ffdcaf;
+
+// Greys
+$color-grey-light: #eee;
+$color-grey: #444;
+$color-grey-dark: #222;
+
+// Colour mapping
+$color-body-link: #000;
+
+$color-button-bg: $color-primary-dark;
+$color-button-fg: #fff;
+$color-button-hover-bg: $color-primary;
+$color-button-hover-fg: #fff;

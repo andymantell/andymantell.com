@@ -1,7 +1,8 @@
 .masthead {
-  padding: 20px 0;
   margin-bottom: 20px;
   @include pie-clearfix;
+  border-bottom: 1px solid $color-grey;
+
 }
 
   .masthead__logo {
@@ -10,9 +11,5 @@
     text-decoration: none;
     font-family: sans-serif;
     float: left;
-  }
-
-
-  .main-menu {
-    float: right;
+    margin: 20px 0;
   }

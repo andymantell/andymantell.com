@@ -1,5 +1,10 @@
 .main-menu {
   font-size: 20px;
+  clear: both;
+  // @include background(
+  //   linear-gradient(#fff, $color-grey-light)
+  // );
+  // border-top: 1px solid $color-grey;
 
   a {
     text-decoration: none;

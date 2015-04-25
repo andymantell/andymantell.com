@@ -10,7 +10,7 @@
   <!-- Contact form template -->
   <!-- ===================================================================== -->
   <xsl:template name="contact_form">
-    <form class="form form--contact" method="POST" action="//forms.brace.io/contact@andymantell.com">
+    <form class="form form--contact" method="POST" action="//forms.brace.io/contact@andymantell.com" novalidate="novalidate">
 
       <label for="email">Email address</label>
       <input required="required" type="email" id="email" name="_replyto" />

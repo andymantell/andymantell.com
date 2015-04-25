@@ -1,0 +1,5 @@
+body {
+  @include background(
+    linear-gradient($color-grey-light, #fff)
+  );
+}

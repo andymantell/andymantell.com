@@ -20,19 +20,19 @@
 
         <head>
           <title><xsl:apply-templates select="." mode="title" /></title>
+          <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'/>
           <link rel="stylesheet" href="/assets/css/style.css" />
         </head>
 
         <body>
           <header class="masthead" role="banner">
-            <div class="inner-wrapper">
-
+            <!-- <div class="inner-wrapper">
               <a class="masthead__logo" href="/">Andy Mantell</a>
+            </div> -->
 
-              <xsl:call-template name="main_menu">
-                <xsl:with-param name="current_page" select="." />
-              </xsl:call-template>
-            </div>
+            <xsl:call-template name="main_menu">
+              <xsl:with-param name="current_page" select="." />
+            </xsl:call-template>
           </header>
 
           <main class="main">

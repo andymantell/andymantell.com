@@ -1,20 +1,12 @@
 @import "compass";
 @import "compass/reset";
 
-// Settings
-$grid-gutter: 23 / 10 * 1rem;
-$grid-columns:  full-width      1,
-                one-half        1/2,
-                one-third       1/3,
-                two-thirds      2/3,
-                one-quarter     1/4,
-                three-quarters  3/4;
-
-// Colours
-$body-link-colour: #000;
+@import "settings";
 
 // Partials
+@import "partials/global/site-wrapper";
 @import "partials/utilities/typography";
+@import "partials/utilities/buttons";
 @import "partials/listings/plain-list";
 @import "partials/utilities/grid";
 @import "partials/utilities/layout";
