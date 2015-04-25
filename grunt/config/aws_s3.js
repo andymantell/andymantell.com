@@ -7,7 +7,6 @@ module.exports = {
     region: '<%= aws.region %>',
     uploadConcurrency: 5,
     downloadConcurrency: 5,
-    // differential: true,
     displayChangesOnly: true,
     progress: 'progressBar',
     gzipRename: 'ext',
