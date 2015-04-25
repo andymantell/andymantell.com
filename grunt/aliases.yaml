@@ -20,6 +20,7 @@ images:
 css:
   - sass
   - autoprefixer
+  - cssmin
 
 js:
   - browserify:prod
