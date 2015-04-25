@@ -40,6 +40,7 @@ clean_production:
   - aws_s3:clean_production
 
 push_production:
+  - cacheBust
   - compress
   - aws_s3:push_production_assets
   - aws_s3:push_production_html
