@@ -1,0 +1,50 @@
+default:
+  - rebuild
+
+fetch:
+  - get_tweets
+  - get_recent_tracks
+
+transform:
+  - exec:clean
+  - copy
+  - concat:xml
+  - exec:transform
+  - exec:remove_xml
+  - exec:logpaths
+  - htmlmin
+
+images:
+  - copy
+
+css:
+  - compass
+
+js:
+  - browserify:prod
+
+'js:dev':
+  - jshint
+  - browserify:dev
+
+rebuild:
+  - fetch
+  - transform
+  - css
+  - js
+
+# AWS tasks
+clean_production:
+  - aws_s3:clean_production
+
+push_production:
+  - s3
+
+refresh_production:
+  - clean_production
+  - push_production
+
+# Task to run on crontab
+cron:
+  - rebuild
+  - push_production

@@ -30,7 +30,8 @@
     "uglifyify": "~2.5.0",
     "grunt-contrib-jshint": "~0.10.0",
     "moment": "~2.8.3",
-    "browserify": "~6.0.3"
+    "browserify": "~6.0.3",
+    "load-grunt-config": "~0.17.1"
   },
   "dependencies": {
     "conduct": "git+https://git@github.com/andymantell/conduct.js.git",
