@@ -26,9 +26,9 @@
 
         <body>
           <header class="masthead" role="banner">
-            <!-- <div class="inner-wrapper">
+            <div class="inner-wrapper">
               <a class="masthead__logo" href="/">Andy Mantell</a>
-            </div> -->
+            </div>
 
             <xsl:call-template name="main_menu">
               <xsl:with-param name="current_page" select="." />
