@@ -2,9 +2,9 @@
 
 <project title="Oxford Today" slug="oxford-today" date="2010-09">
   <images>
-    <image src="http://placehold.it/400x225" />
-    <image teaser="teaser" src="http://placehold.it/400x225" />
-    <image src="http://placehold.it/400x225" />
-    <image src="http://placehold.it/400x225" />
+    <image src="/images/400x225.gif" />
+    <image teaser="teaser" src="/images/400x225.gif" />
+    <image src="/images/400x225.gif" />
+    <image src="/images/400x225.gif" />
   </images>
 </project>
