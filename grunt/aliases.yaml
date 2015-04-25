@@ -44,6 +44,7 @@ push_production:
   - aws_s3:push_production
 
 refresh_production:
+  - rebuild
   - clean_production
   - push_production
 
