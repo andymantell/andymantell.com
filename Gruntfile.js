@@ -62,7 +62,7 @@ module.exports = function(grunt) {
         options: {
           separator: '',
           process: function(src, filepath) {
-            return src.replace(/<\?xml version="1.0"\?>\s*/g, '');
+            return src.replace(/<\?xml version="1.0".*\?>\s*/g, '');
           },
           banner: '<?xml version="1.0"?>\n\n<site>',
           footer: '</site>'
@@ -70,8 +70,8 @@ module.exports = function(grunt) {
         src: [
           'xml/**/*.xml',
           '!xml/site.xml',
-          '!xml/recent_tracks.xml',
-          '!xml/recent_tweets.xml'
+          '!xml/recent-tracks.xml',
+          '!xml/recent-tweets.xml'
         ],
         dest: 'xml/site.xml',
       }
@@ -79,7 +79,7 @@ module.exports = function(grunt) {
 
     exec: {
       transform: {
-        cmd: 'xsltproc --stringparam outputpath dist/ xslt/site.xslt xml/site.xml'
+        cmd: 'xsltproc --stringparam outputpath dist/ src/components/core/site.xslt xml/site.xml'
       },
       remove_xml: {
         cmd: 'rm xml/site.xml'

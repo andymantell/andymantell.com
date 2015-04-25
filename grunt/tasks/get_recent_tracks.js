@@ -9,7 +9,7 @@ module.exports = function(grunt) {
 
     request('http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=andymantell&limit=5&api_key=' + grunt.config.data.lastfm.api_key, function(error, response, body) {
       var fs = require('fs');
-      fs.writeFile("xml/recent_tracks.xml", body, function(err) {
+      fs.writeFile("xml/recent-tracks.xml", body, function(err) {
         if(err) {
           console.log(err);
         } else {

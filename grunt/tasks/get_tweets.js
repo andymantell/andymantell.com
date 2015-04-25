@@ -33,7 +33,7 @@ module.exports = function(grunt) {
         removeIllegalNameCharacters: true
       });
 
-      fs.writeFile("xml/recent_tweets.xml", xml, function(err) {
+      fs.writeFile("xml/recent-tweets.xml", xml, function(err) {
         if(err) {
           console.log(err);
         } else {

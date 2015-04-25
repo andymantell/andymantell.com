@@ -11,7 +11,7 @@
   <!-- ===================================================================== -->
   <xsl:template name="recent_tweets">
     <ul class="plain-list">
-      <xsl:apply-templates select="document('../../../xml/recent_tweets.xml')" />
+      <xsl:apply-templates select="document('../../../xml/recent-tweets.xml')" />
     </ul>
   </xsl:template>
 

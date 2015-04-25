@@ -11,7 +11,7 @@
   <!-- ===================================================================== -->
   <xsl:template name="recent_tracks">
     <ul class="plain-list">
-      <xsl:apply-templates select="document('../../../xml/recent_tracks.xml')"/>
+      <xsl:apply-templates select="document('../../../xml/recent-tracks.xml')"/>
     </ul>
   </xsl:template>
 
