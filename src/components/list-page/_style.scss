@@ -1,20 +1,20 @@
-.list-page {
+.listing {
 
 }
 
-  .list-page__item {
+  .listing__item {
     margin: 0 0 20px 0;
   }
 
 
-.list-page--gallery,
-%list-page--gallery {
+.listing--gallery,
+%listing--gallery {
   @media (min-width: 600px) {
     margin-left: -$grid-gutter;
     @include cf;
   }
 
-  .list-page__item {
+  .listing__item {
     @media (min-width: 600px) {
       float: left;
       box-sizing: border-box;
@@ -28,12 +28,12 @@
   }
 }
 
-.list-page--promo-gallery {
-  @extend %list-page--gallery;
+.listing--promo-gallery {
+  @extend %listing--gallery;
 
-  .list-page__item{
+  .listing__item {
     @media (min-width: 900px) {
-      width: 1 / 2 * 100%;
+      width: (1 / 2) * 100%;
     }
 
     &:first-child {

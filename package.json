@@ -35,7 +35,12 @@
     "grunt-contrib-compress": "~0.13.0",
     "grunt-autoprefixer": "~3.0.0",
     "grunt-contrib-cssmin": "~0.12.2",
-    "grunt-cache-bust": "~0.4.13"
+    "grunt-cache-bust": "~0.4.13",
+    "grunt-contrib-imagemin": "~0.9.4",
+    "imagemin-mozjpeg": "~5.1.0",
+    "imagemin-pngquant": "~4.1.0",
+    "imagemin-gifsicle": "~4.1.0",
+    "imagemin-svgo": "~4.1.2"
   },
   "dependencies": {
     "form-serialize": "~0.3.0",

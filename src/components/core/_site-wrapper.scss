@@ -1,3 +1,8 @@
+html {
+  height: 100%;
+}
+
 body {
-  background: #fff linear-gradient($color-grey-light, #fff);
+  height: 100%;
+  background: #fff linear-gradient($color-grey-light, #fff 500px) no-repeat;
 }

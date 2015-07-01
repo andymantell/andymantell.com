@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 
-<homepage title="Andy Mantell - Freelance web developer" menu_title="Home" path="">
+<homepage title="Contract web developer" menu_title="Home" path="">
   <region name="content">
-    <p>I am a freelance web developer specialising in frontend development, Drupal site building, theming and module development. Please view my CV or check me out on LinkedIn to find out more about what I do.</p>
+    <p>I am a contract/freelance web developer specialising in frontend development, Drupal site building, theming and module development. Please view my CV or check me out on LinkedIn to find out more about what I do.</p>
     <p>I am currently available from May 2014. Please get in touch if you would like to discuss working together - I would love to hear from you! Email me at contact@andymantell.com or give me a call on 07880 808160.</p>
   </region>
 

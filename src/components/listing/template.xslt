@@ -27,17 +27,17 @@
 
     <ul>
       <xsl:attribute name="class">
-        <xsl:text>list-page</xsl:text>
+        <xsl:text>listing</xsl:text>
 
         <xsl:if test="$modifier">
-          <xsl:text> list-page--</xsl:text>
+          <xsl:text> listing--</xsl:text>
           <xsl:value-of select="$modifier" />
         </xsl:if>
       </xsl:attribute>
       <xsl:for-each select="exsl:node-set($sortedItems)/*">
         <li>
           <xsl:attribute name="class">
-            <xsl:text>list-page__item</xsl:text>
+            <xsl:text>listing__item</xsl:text>
           </xsl:attribute>
 
           <xsl:apply-templates select="." mode="teaser" />

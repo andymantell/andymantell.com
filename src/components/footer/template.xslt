@@ -16,15 +16,39 @@
     <div class="grid-wrap">
 
       <div class="grid-col grid-one-third">
-        <xsl:call-template name="recent_tweets" />
+        <xsl:call-template name="panel">
+          <xsl:with-param name="title">
+            <a href="https://twitter.com/andymantell">Recent tweets</a>
+          </xsl:with-param>
+
+          <xsl:with-param name="content">
+            <xsl:call-template name="recent_tweets" />
+          </xsl:with-param>
+        </xsl:call-template>
       </div>
 
       <div class="grid-col grid-one-third">
-        <xsl:call-template name="recent_tracks" />
+        <xsl:call-template name="panel">
+          <xsl:with-param name="title">
+            <a href="https://last.fm/user/andymantell">Recent tracks</a>
+          </xsl:with-param>
+
+          <xsl:with-param name="content">
+            <xsl:call-template name="recent_tracks" />
+          </xsl:with-param>
+        </xsl:call-template>
       </div>
 
       <div class="grid-col grid-one-third">
-        <xsl:call-template name="contact_form" />
+        <xsl:call-template name="panel">
+          <xsl:with-param name="title">
+            <a href="mailto:contact@andymantell.com">Get in touch</a>
+          </xsl:with-param>
+
+          <xsl:with-param name="content">
+            <xsl:call-template name="contact_form" />
+          </xsl:with-param>
+        </xsl:call-template>
       </div>
 
     </div>

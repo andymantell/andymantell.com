@@ -1,4 +1,4 @@
-var mozjpeg = require('imagemin-jpegtran');
+var mozjpeg = require('imagemin-mozjpeg');
 var pngquant = require('imagemin-pngquant');
 var gifsicle = require('imagemin-gifsicle');
 var svgo = require('imagemin-svgo');
