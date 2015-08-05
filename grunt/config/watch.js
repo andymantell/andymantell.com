@@ -1,4 +1,7 @@
 module.exports = {
+  options: {
+    atBegin: true
+  },
   scss: {
     files: 'src/**/*.scss',
     tasks: ['css']
@@ -9,11 +12,6 @@ module.exports = {
     tasks: ['js:dev']
   },
 
-  images: {
-    'files': 'images/**',
-    'tasks': ['images']
-  },
-
   build: {
     files: [
       'xml/**/*.*',
@@ -21,5 +19,10 @@ module.exports = {
       'src/**/*.xslt'
     ],
     tasks: ['transform']
+  },
+
+  images: {
+    'files': 'images/**',
+    'tasks': ['images']
   }
 };

@@ -27,7 +27,9 @@
         <body>
           <header class="masthead" role="banner">
             <div class="inner-wrapper">
-              <a class="masthead__logo" href="/">Andy Mantell</a>
+              <a class="masthead__logo" href="/">
+                <img src="/assets/img/logo.svg" width="424" alt="Andy Mantell" />
+              </a>
             </div>
 
             <xsl:call-template name="main_menu">
