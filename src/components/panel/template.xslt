@@ -12,8 +12,16 @@
   <xsl:template name="panel">
     <xsl:param name="title" />
     <xsl:param name="content" />
+    <xsl:param name="class" />
 
-    <div class="panel">
+    <div>
+      <xsl:attribute name="class">
+        <xsl:text>panel</xsl:text>
+        <xsl:if test="$class">
+          <xsl:text> panel--</xsl:text><xsl:value-of select="$class" />
+        </xsl:if>
+      </xsl:attribute>
+
       <xsl:if test="$title">
         <h2 class="panel__title">
           <xsl:copy-of select="$title" />

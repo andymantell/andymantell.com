@@ -67,16 +67,23 @@
   <!-- Client teasers as found on project pages -->
   <!-- ===================================================================== -->
   <xsl:template match="client" mode="associated">
-    <article class="teaser teaser--image">
-      <a class="teaser__link">
-        <xsl:attribute name="href">
-          <xsl:apply-templates select="." mode="url" />
-        </xsl:attribute>
 
-        <xsl:apply-templates select="logo/image" />
-      </a>
+    <xsl:call-template name="panel">
+      <xsl:with-param name="title">Under contract with</xsl:with-param>
+      <xsl:with-param name="class">client</xsl:with-param>
+      <xsl:with-param name="content">
+        <article class="teaser teaser--image">
+          <a class="teaser__link">
+            <xsl:attribute name="href">
+              <xsl:apply-templates select="." mode="url" />
+            </xsl:attribute>
 
-      <xsl:copy-of select="description" />
-    </article>
+            <xsl:apply-templates select="logo/image" />
+          </a>
+        </article>
+
+      </xsl:with-param>
+    </xsl:call-template>
+
   </xsl:template>
 </xsl:stylesheet>

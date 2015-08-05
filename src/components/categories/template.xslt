@@ -10,9 +10,15 @@
   <!-- List of category links -->
   <!-- ===================================================================== -->
   <xsl:template match="categories" mode="links">
-    <ul class="categories">
-      <xsl:apply-templates select="*" mode="categories" />
-    </ul>
+    <xsl:call-template name="panel">
+      <xsl:with-param name="title">Categories</xsl:with-param>
+      <xsl:with-param name="class">categories</xsl:with-param>
+      <xsl:with-param name="content">
+        <ul class="categories__list">
+        <xsl:apply-templates select="*" mode="categories" />
+      </ul>
+      </xsl:with-param>
+    </xsl:call-template>
   </xsl:template>
 
   <!-- Individual category list items -->
