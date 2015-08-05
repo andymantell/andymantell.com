@@ -41,8 +41,10 @@
   <xsl:template match="client" mode="body">
     <xsl:copy-of select="region[@name='content']" />
 
+    <xsl:variable name="client" select="@slug" />
+
     <xsl:call-template name="teaser-listing">
-      <xsl:with-param name="items" select="/site/project[@client='cx-partners']" />
+      <xsl:with-param name="items" select="/site/project[@client=$client]" />
       <xsl:with-param name="limit">6</xsl:with-param>
       <xsl:with-param name="modifier">gallery</xsl:with-param>
     </xsl:call-template>

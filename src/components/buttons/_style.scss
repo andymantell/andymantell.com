@@ -5,15 +5,16 @@
   padding: 8px 15px;
   margin-right: $grid-gutter;
   text-decoration: none;
-  border-radius: 2px;
   flex-grow: 1;
   text-align: center;
+  text-transform: uppercase;
 
   &:last-child {
     margin-right: 0;
   }
 
   &:hover {
-    background-color: darken($color-button-bg, 10%);
+    background-color: $color-button-hover-bg;
+    color: $color-button-hover-fg;
   }
 }

@@ -18,6 +18,7 @@
 
   <xsl:include href="components/forms/instances/contact-form/template.xslt"/>
 
+  <xsl:include href="components/masthead/template.xslt"/>
   <xsl:include href="components/masthead/main-menu/template.xslt"/>
   <xsl:include href="components/footer/template.xslt"/>
 

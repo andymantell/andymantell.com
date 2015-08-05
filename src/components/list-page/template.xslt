@@ -76,7 +76,7 @@
     <xsl:call-template name="teaser-listing">
       <xsl:with-param name="items" select="$items" />
       <xsl:with-param name="limit" select="$rpp" />
-      <xsl:with-param name="modifier">gallery</xsl:with-param>
+      <xsl:with-param name="modifier" select="@listing-style" />
     </xsl:call-template>
 
     <xsl:copy-of select="$pager" />

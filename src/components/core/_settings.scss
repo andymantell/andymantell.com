@@ -14,9 +14,9 @@ $grid-columns:  full-width      1,
  */
 
 // Main scheme
-$color-primary: #afe3ff;
-$color-primary-light: #c9ecff;
-$color-primary-dark: #6999b2;
+$color-primary: #000;
+// $color-primary-light: #c9ecff;
+$color-primary-dark: #000;
 $color-complementary: #b28b57;
 $color-complementary-light: #ffdcaf;
 
@@ -28,7 +28,7 @@ $color-grey-dark: #222;
 // Colour mapping
 $color-body-link: #000;
 
-$color-button-bg: $color-primary-dark;
+$color-button-bg: #000;
 $color-button-fg: #fff;
-$color-button-hover-bg: $color-primary;
-$color-button-hover-fg: #fff;
+$color-button-hover-bg: #000;
+$color-button-hover-fg: #f3df49;

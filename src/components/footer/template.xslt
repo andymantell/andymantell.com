@@ -13,45 +13,50 @@
   <!-- Page footer -->
   <!-- ===================================================================== -->
   <xsl:template name="footer">
-    <div class="grid-wrap">
 
-      <div class="grid-col grid-one-third">
-        <xsl:call-template name="panel">
-          <xsl:with-param name="title">
-            <a href="https://twitter.com/andymantell">Recent tweets</a>
-          </xsl:with-param>
+    <footer class="footer">
+      <div class="inner-wrapper">
+        <div class="grid-wrap">
 
-          <xsl:with-param name="content">
-            <xsl:call-template name="recent_tweets" />
-          </xsl:with-param>
-        </xsl:call-template>
+          <div class="grid-col grid-one-third">
+            <xsl:call-template name="panel">
+              <xsl:with-param name="title">
+                <a href="https://twitter.com/andymantell">Recent tweets</a>
+              </xsl:with-param>
+
+              <xsl:with-param name="content">
+                <xsl:call-template name="recent_tweets" />
+              </xsl:with-param>
+            </xsl:call-template>
+          </div>
+
+          <div class="grid-col grid-one-third">
+            <xsl:call-template name="panel">
+              <xsl:with-param name="title">
+                <a href="https://last.fm/user/andymantell">Recent tracks</a>
+              </xsl:with-param>
+
+              <xsl:with-param name="content">
+                <xsl:call-template name="recent_tracks" />
+              </xsl:with-param>
+            </xsl:call-template>
+          </div>
+
+          <div class="grid-col grid-one-third">
+            <xsl:call-template name="panel">
+              <xsl:with-param name="title">
+                <a href="mailto:contact@andymantell.com">Get in touch</a>
+              </xsl:with-param>
+
+              <xsl:with-param name="content">
+                <xsl:call-template name="contact_form" />
+              </xsl:with-param>
+            </xsl:call-template>
+          </div>
+
+        </div>
       </div>
-
-      <div class="grid-col grid-one-third">
-        <xsl:call-template name="panel">
-          <xsl:with-param name="title">
-            <a href="https://last.fm/user/andymantell">Recent tracks</a>
-          </xsl:with-param>
-
-          <xsl:with-param name="content">
-            <xsl:call-template name="recent_tracks" />
-          </xsl:with-param>
-        </xsl:call-template>
-      </div>
-
-      <div class="grid-col grid-one-third">
-        <xsl:call-template name="panel">
-          <xsl:with-param name="title">
-            <a href="mailto:contact@andymantell.com">Get in touch</a>
-          </xsl:with-param>
-
-          <xsl:with-param name="content">
-            <xsl:call-template name="contact_form" />
-          </xsl:with-param>
-        </xsl:call-template>
-      </div>
-
-    </div>
+    </footer>
   </xsl:template>
 
 </xsl:stylesheet>

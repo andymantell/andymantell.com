@@ -24,15 +24,9 @@
 
 </page>
 
-<page title="Projects" path="projects" listing="project" rpp="9">
-
-  <page title="Clients" path="projects/clients" listing="client" rpp="9" />
-
-  <page title="Child page" path="projects/page">
-    <region name="content">
-      <p>This is a child of the projects page</p>
-    </region>
-  </page>
+<page title="Projects" path="projects" listing="project" listing-style="gallery" rpp="9">
+  <page title="Clients" path="projects/clients" listing="client" listing-style="gallery" rpp="9" />
+  <page title="Categories" path="projects/categories" listing="category" rpp="9" />
 </page>
 
 <page title="Blog" path="blog" listing="blogpost" rpp="3" />

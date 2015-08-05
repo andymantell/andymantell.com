@@ -5,4 +5,10 @@
     <image teaser="teaser" src="/images/jisc/homepage.jpg" />
     <image src="/images/jisc/event.jpg" />
   </images>
+
+  <categories>
+    <category type="technology" name="html" />
+    <category type="technology" name="css" />
+    <category type="technology" name="js" />
+  </categories>
 </project>

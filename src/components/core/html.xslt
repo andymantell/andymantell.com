@@ -25,17 +25,7 @@
         </head>
 
         <body>
-          <header class="masthead" role="banner">
-            <div class="inner-wrapper">
-              <a class="masthead__logo" href="/">
-                <img src="/assets/img/logo.svg" width="424" alt="Andy Mantell" />
-              </a>
-            </div>
-
-            <xsl:call-template name="main_menu">
-              <xsl:with-param name="current_page" select="." />
-            </xsl:call-template>
-          </header>
+          <xsl:call-template name="masthead" />
 
           <main class="main">
             <div class="inner-wrapper">
@@ -62,11 +52,7 @@
             </div>
           </main>
 
-          <footer class="footer">
-            <div class="inner-wrapper">
-              <xsl:call-template name="footer" />
-            </div>
-          </footer>
+          <xsl:call-template name="footer" />
 
           <script src="/assets/js/main.js"></script>
         </body>
