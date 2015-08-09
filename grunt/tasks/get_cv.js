@@ -17,9 +17,14 @@ module.exports = function(grunt) {
         markdown = markdown.replace(/<h1 id=".*">.*<\/h1>/, '');
 
         // Build up the xml for the page
-        cvPage += '<page title="CV" path="cv"><region name="content">'
+        cvPage += '<page title="CV" path="cv">';
+        cvPage += '<region name="content">';
         cvPage += markdown;
-        cvPage += '</region></page>';
+        cvPage += '</region>';
+        cvPage += '<region name="sidebar-right">';
+        cvPage += '<a href="/CV.pdf" class="button">Download CV</a>';
+        cvPage += '</region>';
+        cvPage += '</page>';
         fs.writeFileSync('xml/cv.xml', cvPage);
 
         // Copy PDF version of the CV

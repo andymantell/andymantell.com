@@ -17,6 +17,9 @@
       <xsl:with-param name="body">
         <xsl:apply-templates select="." mode="body" />
       </xsl:with-param>
+      <xsl:with-param name="sidebar-right">
+        <xsl:apply-templates select="." mode="sidebar-right" />
+      </xsl:with-param>
     </xsl:call-template>
 
     <!-- Recursively match child pages in the structure -->
@@ -40,7 +43,15 @@
   <!-- Basic page body content -->
   <!-- ===================================================================== -->
   <xsl:template match="page[not(@listing)]" mode="body">
-    <xsl:copy-of select="region[@name='content']/*" />
+    <article class="longform">
+      <xsl:copy-of select="region[@name='content']/*" />
+    </article>
+  </xsl:template>
+
+  <!-- Basic page sidebar content -->
+  <!-- ===================================================================== -->
+  <xsl:template match="page[not(@listing)]" mode="sidebar-right">
+    <xsl:copy-of select="region[@name='sidebar-right']/*" />
   </xsl:template>
 
 </xsl:stylesheet>
