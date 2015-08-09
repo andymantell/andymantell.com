@@ -33,6 +33,7 @@ rebuild:
   - fetch
   - transform
   - images
+  - get_cv
   - css
   - js
 
