@@ -40,7 +40,7 @@
   <!-- Basic page body content -->
   <!-- ===================================================================== -->
   <xsl:template match="page[not(@listing)]" mode="body">
-    <xsl:copy-of select="region[@name='content']" />
+    <xsl:copy-of select="region[@name='content']/*" />
   </xsl:template>
 
 </xsl:stylesheet>

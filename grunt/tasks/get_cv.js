@@ -10,9 +10,15 @@ module.exports = function(grunt) {
       .then(function(results) {
 
         // Generate CV page
+        var markdown = results[0];
         var cvPage = '';
+
+        // Strip out the h1 tag
+        markdown = markdown.replace(/<h1 id=".*">.*<\/h1>/, '');
+
+        // Build up the xml for the page
         cvPage += '<page title="CV" path="cv"><region name="content">'
-        cvPage += results[0];
+        cvPage += markdown;
         cvPage += '</region></page>';
         fs.writeFileSync('xml/cv.xml', cvPage);
 
