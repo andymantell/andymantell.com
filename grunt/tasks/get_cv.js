@@ -9,8 +9,14 @@ module.exports = function(grunt) {
     Promise.all([cv.html, cv.pdf])
       .then(function(results) {
 
-        // results[0]
+        // Generate CV page
+        var cvPage = '';
+        cvPage += '<page title="CV" path="cv"><region name="content">'
+        cvPage += results[0];
+        cvPage += '</region></page>';
+        fs.writeFileSync('xml/cv.xml', cvPage);
 
+        // Copy PDF version of the CV
         fs.copySync(results[1], 'dist/CV.pdf');
 
         done();

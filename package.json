@@ -37,6 +37,7 @@
     "jsontoxml": "0.0.11",
     "load-grunt-config": "~0.17.1",
     "load-grunt-tasks": "~3.2.0",
+    "mkdirp": "^0.5.1",
     "moment": "~2.10.3",
     "request": "~2.58.0",
     "time-grunt": "~1.2.1",

@@ -6,6 +6,7 @@ fetch:
   - get_recent_tracks
 
 transform:
+  - get_cv
   - concat:xml
   - exec:transform
   - exec:remove_xml
@@ -33,7 +34,6 @@ rebuild:
   - fetch
   - transform
   - images
-  - get_cv
   - css
   - js
 
