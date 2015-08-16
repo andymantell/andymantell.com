@@ -28,17 +28,17 @@
   }
 }
 
-.listing--promo-gallery {
-  @extend %listing--gallery;
+// .listing--promo-gallery {
+//   @extend %listing--gallery;
 
-  .listing__item {
-    @media (min-width: 900px) {
-      width: (1 / 2) * 100%;
-    }
+//   .listing__item {
+//     @media (min-width: 900px) {
+//       width: (1 / 2) * 100%;
+//     }
 
-    &:first-child {
-      width: auto;
-      float: none;
-    }
-  }
-}
+//     &:first-child {
+//       width: auto;
+//       float: none;
+//     }
+//   }
+// }

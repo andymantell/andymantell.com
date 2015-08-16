@@ -14,6 +14,7 @@
   <xsl:include href="components/list-page/template.xslt"/>
   <xsl:include href="components/panel/template.xslt"/>
   <xsl:include href="components/categories/template.xslt"/>
+  <xsl:include href="components/service/template.xslt"/>
   <xsl:include href="components/htaccess/template.xslt"/>
 
   <xsl:include href="components/forms/instances/contact-form/template.xslt"/>
@@ -31,6 +32,8 @@
   <!-- Panel variants -->
   <xsl:include href="components/panel-cta/template.xslt"/>
   <xsl:include href="components/panel-recent-blog-posts/template.xslt"/>
+  <xsl:include href="components/panel-services/template.xslt"/>
+  <xsl:include href="components/panel-recent-projects/template.xslt"/>
 
   <xsl:param name="outputpath" />
 

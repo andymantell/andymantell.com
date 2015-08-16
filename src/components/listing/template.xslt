@@ -18,6 +18,7 @@
       <xsl:for-each select="exsl:node-set($items)[@status='published']">
         <xsl:sort select="@sticky" order="descending" />
         <xsl:sort select="@date" order="descending" />
+        <xsl:sort select="@weighting" order="ascending" />
 
         <xsl:if test="not(position() > $limit)">
           <xsl:copy-of select="." />

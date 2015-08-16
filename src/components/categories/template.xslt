@@ -51,7 +51,7 @@
     <xsl:value-of select="@title" />
   </xsl:template>
 
-  <!-- Client teasers as found on list pages -->
+  <!-- Category teasers as found on list pages -->
   <!-- ===================================================================== -->
   <xsl:template match="category" mode="teaser">
     <article class="teaser">

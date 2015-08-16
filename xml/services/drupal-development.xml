@@ -1,0 +1,5 @@
+<service name="drupal-development" title="Drupal development" status="published"  weighting="1">
+  <description>
+    <p>This is a description of the drupal development service</p>
+  </description>
+</service>

@@ -44,11 +44,8 @@
   <xsl:template match="homepage" mode="body">
     <xsl:copy-of select="region[@name='content']" />
 
-    <xsl:call-template name="teaser-listing">
-      <xsl:with-param name="items" select="/site/project" />
-      <xsl:with-param name="limit">3</xsl:with-param>
-      <xsl:with-param name="modifier">promo-gallery</xsl:with-param>
-    </xsl:call-template>
+    <xsl:call-template name="panel-recent-projects" />
+    <xsl:call-template name="panel-services" />
   </xsl:template>
 
 </xsl:stylesheet>

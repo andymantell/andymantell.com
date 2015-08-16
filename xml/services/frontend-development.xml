@@ -1,0 +1,5 @@
+<service name="frontend-development" title="Frontend development" status="published" weighting="0">
+  <description>
+    <p>This is a description of the frontend development service</p>
+  </description>
+</service>
