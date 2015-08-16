@@ -83,4 +83,10 @@
 
   </xsl:template>
 
+  <!-- Listing page sidebar content -->
+  <!-- ===================================================================== -->
+  <xsl:template match="page[@listing]" mode="sidebar-right">
+    <xsl:apply-templates select="region[@name='sidebar-right']/*" />
+  </xsl:template>
+
 </xsl:stylesheet>

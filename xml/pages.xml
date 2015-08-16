@@ -6,8 +6,9 @@
     <p>I am currently available from January 2015. Please get in touch if you would like to discuss working together - I would love to hear from you! Email me at contact@andymantell.com or give me a call on 07880 808160.</p>
   </region>
 
-  <region name="sidebar">
-    <p>Available for contracts January 2015 onwards</p>
+  <region name="sidebar-right">
+    <panel name="cta" />
+    <panel name="recent-blog-posts" />
   </region>
 </homepage>
 
@@ -16,9 +17,19 @@
     <p>About page</p>
   </region>
 
+  <region name="sidebar-right">
+    <panel name="cta" />
+    <panel name="recent-blog-posts" />
+  </region>
+
   <page title="Child page" path="about/child/page">
     <region name="content">
       <p>This is a child of the about page</p>
+    </region>
+
+    <region name="sidebar-right">
+      <panel name="cta" />
+      <panel name="recent-blog-posts" />
     </region>
   </page>
 
@@ -29,4 +40,8 @@
   <page title="Categories" path="projects/categories" listing="category" rpp="9" />
 </page>
 
-<page title="Blog" path="blog" listing="blogpost" rpp="3" />
+<page title="Blog" path="blog" listing="blogpost" rpp="3">
+  <region name="sidebar-right">
+    <panel name="cta" />
+  </region>
+</page>

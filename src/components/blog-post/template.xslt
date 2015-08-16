@@ -17,6 +17,9 @@
       <xsl:with-param name="body">
         <xsl:apply-templates select="." mode="body" />
       </xsl:with-param>
+      <xsl:with-param name="sidebar-right">
+        <xsl:apply-templates select="." mode="sidebar-right" />
+      </xsl:with-param>
     </xsl:call-template>
   </xsl:template>
 
@@ -54,5 +57,12 @@
         <xsl:value-of select="teaser" />
       </p>
     </a>
+  </xsl:template>
+
+  <!-- Blog page sidebar content -->
+  <!-- ===================================================================== -->
+  <xsl:template match="blogpost" mode="sidebar-right">
+    <xsl:call-template name="panel-cta" />
+    <xsl:call-template name="panel-recent-blog-posts" />
   </xsl:template>
 </xsl:stylesheet>

@@ -51,7 +51,7 @@
   <!-- Basic page sidebar content -->
   <!-- ===================================================================== -->
   <xsl:template match="page[not(@listing)]" mode="sidebar-right">
-    <xsl:copy-of select="region[@name='sidebar-right']/*" />
+    <xsl:apply-templates select="region[@name='sidebar-right']/*" />
   </xsl:template>
 
 </xsl:stylesheet>

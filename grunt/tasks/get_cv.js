@@ -22,7 +22,7 @@ module.exports = function(grunt) {
         cvPage += markdown;
         cvPage += '</region>';
         cvPage += '<region name="sidebar-right">';
-        cvPage += '<a href="/CV.pdf" class="button">Download CV</a>';
+        cvPage += '<panel name="cta-cv" />';
         cvPage += '</region>';
         cvPage += '</page>';
         fs.writeFileSync('xml/cv.xml', cvPage);

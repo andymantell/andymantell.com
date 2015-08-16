@@ -13,6 +13,7 @@
     <xsl:param name="title" />
     <xsl:param name="content" />
     <xsl:param name="class" />
+    <xsl:param name="actions"  />
 
     <div>
       <xsl:attribute name="class">
@@ -31,6 +32,17 @@
       <div class="panel__content">
         <xsl:copy-of select="$content" />
       </div>
+
+      <footer class="panel__actions">
+        <xsl:for-each select="exsl:node-set($actions)/*">
+          <a class="button">
+            <xsl:attribute name="href">
+              <xsl:value-of select="@href" />
+            </xsl:attribute>
+            <xsl:value-of select="@text" />
+          </a>
+        </xsl:for-each>
+      </footer>
     </div>
   </xsl:template>
 

@@ -28,6 +28,10 @@
   <xsl:include href="components/blog-post/template.xslt"/>
   <xsl:include href="components/homepage/template.xslt"/>
 
+  <!-- Panel variants -->
+  <xsl:include href="components/panel-cta/template.xslt"/>
+  <xsl:include href="components/panel-recent-blog-posts/template.xslt"/>
+
   <xsl:param name="outputpath" />
 
   <xsl:variable name="rootSiteNode" select="/site" />

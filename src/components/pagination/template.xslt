@@ -53,6 +53,10 @@
           <xsl:with-param name="rpp" select="$rpp" />
         </xsl:apply-templates>
       </xsl:with-param>
+
+      <xsl:with-param name="sidebar-right">
+        <xsl:apply-templates select="." mode="sidebar-right" />
+      </xsl:with-param>
     </xsl:call-template>
 
     <xsl:variable name="remaining_items" select="$items[position() &gt; $rpp]" />
