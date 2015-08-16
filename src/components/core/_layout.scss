@@ -4,6 +4,14 @@
   margin: 0 auto;
 }
 
-@media (min-width: 767px) {
-  @include grids-init('grid');
+@include spacing();
+
+@media (min-width: $bp-tablet-min) {
+  @include grids-init('tablet-grid');
+  @include spacing(tablet);
+}
+
+@media (min-width: $bp-desktop-min) {
+  @include grids-init('desktop-grid');
+  @include spacing(desktop);
 }

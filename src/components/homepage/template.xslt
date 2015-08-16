@@ -15,12 +15,22 @@
         <xsl:apply-templates select="." mode="url" />
       </xsl:with-param>
 
+      <xsl:with-param name="top">
+        <div class="intro">
+          <xsl:apply-templates select="region[@name='top']" />
+        </div>
+      </xsl:with-param>
+
       <xsl:with-param name="body">
         <xsl:apply-templates select="." mode="body" />
       </xsl:with-param>
 
       <xsl:with-param name="sidebar-right">
         <xsl:apply-templates select="region[@name='sidebar-right']" />
+      </xsl:with-param>
+
+      <xsl:with-param name="bottom">
+        <xsl:apply-templates select="region[@name='bottom']" />
       </xsl:with-param>
     </xsl:call-template>
   </xsl:template>
@@ -42,10 +52,19 @@
   <!-- Homepage body content -->
   <!-- ===================================================================== -->
   <xsl:template match="homepage" mode="body">
-    <xsl:copy-of select="region[@name='content']" />
+    <xsl:apply-templates select="region[@name='content']/*" />
+  </xsl:template>
 
-    <xsl:call-template name="panel-recent-projects" />
-    <xsl:call-template name="panel-services" />
+  <!-- Homepage bottom content -->
+  <!-- ===================================================================== -->
+  <xsl:template match="homepage" mode="bottom">
+    <xsl:apply-templates select="region[@name='bottom']/*" />
+  </xsl:template>
+
+  <!-- Homepage top content -->
+  <!-- ===================================================================== -->
+  <xsl:template match="homepage" mode="top">
+    <xsl:apply-templates select="region[@name='top']/*" />
   </xsl:template>
 
 </xsl:stylesheet>

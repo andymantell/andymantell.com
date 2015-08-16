@@ -15,7 +15,7 @@
     <xsl:param name="class" />
     <xsl:param name="actions"  />
 
-    <div>
+    <section>
       <xsl:attribute name="class">
         <xsl:text>panel</xsl:text>
         <xsl:if test="$class">
@@ -43,7 +43,7 @@
           </a>
         </xsl:for-each>
       </footer>
-    </div>
+    </section>
   </xsl:template>
 
 </xsl:stylesheet>

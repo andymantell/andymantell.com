@@ -55,6 +55,13 @@ ul {
 }
 
 /**
+ * Intro copy
+ */
+.intro {
+  font-size: 18px;
+}
+
+/**
  * Longform copy
  */
 .longform {
@@ -77,4 +84,9 @@ ul {
   h2, h3 {
     margin-top: 40px;
   }
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
 }

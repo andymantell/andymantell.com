@@ -21,7 +21,7 @@
       <xsl:with-param name="content">
         <xsl:call-template name="teaser-listing">
           <xsl:with-param name="items" select="/site/blogpost" />
-          <xsl:with-param name="limit">3</xsl:with-param>
+          <xsl:with-param name="limit">2</xsl:with-param>
         </xsl:call-template>
       </xsl:with-param>
     </xsl:call-template>

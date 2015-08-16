@@ -3,7 +3,7 @@
   color: $color-button-fg;
   display: inline-block;
   padding: 8px 15px;
-  margin-right: $grid-gutter;
+  margin: 0 $grid-gutter $vertical-spacing-tight 0;
   text-decoration: none;
   flex-grow: 1;
   text-align: center;

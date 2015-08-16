@@ -1,18 +1,26 @@
 <?xml version="1.0"?>
 
 <homepage title="Contract web developer" menu_title="Home" path="">
-  <region name="content">
+  <region name="top">
     <p>I am a contract/freelance web developer specialising in frontend development, Drupal site building, theming and module development. Please view my CV or check me out on LinkedIn to find out more about what I do.</p>
     <p>I am currently available from January 2015. Please get in touch if you would like to discuss working together - I would love to hear from you! Email me at contact@andymantell.com or give me a call on 07880 808160.</p>
+  </region>
+
+  <region name="content">
+    <panel name="recent-projects" />
   </region>
 
   <region name="sidebar-right">
     <panel name="cta" />
     <panel name="recent-blog-posts" />
   </region>
+
+  <region name="bottom">
+    <panel name="services" />
+  </region>
 </homepage>
 
-<page title="About" path="about">
+<!-- <page title="About" path="about">
   <region name="content">
     <p>About page</p>
   </region>
@@ -32,12 +40,11 @@
       <panel name="recent-blog-posts" />
     </region>
   </page>
-
-</page>
+</page> -->
 
 <page title="Projects" path="projects" listing="project" listing-style="gallery" rpp="9">
   <page title="Clients" path="projects/clients" listing="client" listing-style="gallery" rpp="9" />
-  <page title="Categories" path="projects/categories" listing="category" rpp="9" />
+  <!-- <page title="Categories" path="projects/categories" listing="category" rpp="9" /> -->
 </page>
 
 <page title="Blog" path="blog" listing="blogpost" rpp="3">

@@ -1,5 +1,8 @@
 <service name="drupal-development" title="Drupal development" status="published"  weighting="1">
   <description>
-    <p>This is a description of the drupal development service</p>
+    <p>This is a description of the drupal development service. This is a description of the drupal development service. This is a description of the drupal development service. This is a description of the drupal development service. This is a description of the drupal development service. </p>
   </description>
+  <images>
+    <image teaser="teaser" src="/images/300x200.gif" />
+  </images>
 </service>

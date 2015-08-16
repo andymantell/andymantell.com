@@ -1,0 +1,30 @@
+@mixin spacing($prefix: false, $reset: true) {
+  @if $prefix {
+    $prefix: $prefix + '-';
+  }
+  @else {
+    $prefix: '';
+  }
+
+  @each $direction in top, bottom  {
+    .#{$prefix}spacing-#{$direction}--flush {
+      margin-#{$direction}: 0;
+    }
+
+    .#{$prefix}spacing-#{$direction}--half {
+      margin-#{$direction}: $vertical-spacing-tight;
+    }
+
+    .#{$prefix}spacing-#{$direction}--single {
+      margin-#{$direction}: $vertical-spacing;
+    }
+
+    .#{$prefix}spacing-#{$direction}--double {
+      margin-#{$direction}: 2 * $vertical-spacing;
+    }
+
+    .#{$prefix}spacing-#{$direction}--triple {
+      margin-#{$direction}: 3 * $vertical-spacing;
+    }
+  }
+}

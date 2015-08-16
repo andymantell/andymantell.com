@@ -1,0 +1,23 @@
+.media__item {
+  margin-bottom: $vertical-spacing;
+}
+
+@media (min-width: $bp-tablet-small-min) {
+  .media {
+    overflow: hidden;
+
+    &__content {
+      overflow: hidden;
+    }
+  }
+
+  .media__item {
+    float: left;
+    margin: 0 $grid-gutter 0 0;
+
+    .media--right & {
+      float: right;
+      margin: 0 0 0 $grid-gutter;
+    }
+  }
+}

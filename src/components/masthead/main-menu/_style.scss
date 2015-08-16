@@ -1,5 +1,11 @@
 .main-menu {
   font-size: 20px;
+  clear: both;
+  background-color: #eee;
+
+  @media (min-width: $bp-tablet-min) {
+    clear: none;
+  }
 
   ul {
     margin: 0;
@@ -19,13 +25,24 @@
  * Top level
  */
 .main-menu__level-1 {
-  float: right;
-  position: relative;
   line-height: 50px;
+  display: table;
+  width: 100%;
+
+  @media (min-width: $bp-tablet-min) {
+    width: auto;
+    float: right;
+    position: relative;
+  }
 }
 
 .main-menu__level-1__item {
-  float: left;
+  display: table-cell;
+  text-align: center;
+
+  @media (min-width: $bp-tablet-min) {
+    float: left;
+  }
 }
 
 .main-menu__level-1__item--has-children {

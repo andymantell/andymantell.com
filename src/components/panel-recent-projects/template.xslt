@@ -15,14 +15,14 @@
 
   <xsl:template name="panel-recent-projects">
     <xsl:call-template name="panel">
-      <xsl:with-param name="title">
+      <!-- <xsl:with-param name="title">
         <a href="/projects">Recent projects</a>
-      </xsl:with-param>
+      </xsl:with-param> -->
       <xsl:with-param name="content">
         <xsl:call-template name="teaser-listing">
           <xsl:with-param name="items" select="/site/project" />
-          <xsl:with-param name="limit">6</xsl:with-param>
-          <xsl:with-param name="modifier">gallery</xsl:with-param>
+          <xsl:with-param name="limit">4</xsl:with-param>
+          <xsl:with-param name="modifier">gallery-narrow</xsl:with-param>
         </xsl:call-template>
       </xsl:with-param>
     </xsl:call-template>

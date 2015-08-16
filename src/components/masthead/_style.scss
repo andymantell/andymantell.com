@@ -1,7 +1,6 @@
 .masthead {
-  margin-bottom: 20px;
-  border-bottom: 1px solid $color-grey;
-  padding: 20px 0;
+  // margin-bottom: $vertical-spacing;
+  padding: $vertical-spacing 0;
   @include cf;
 }
 
@@ -11,8 +10,10 @@
     text-decoration: none;
     font-family: sans-serif;
     float: left;
+    margin-bottom: $vertical-spacing;
 
     img {
       display: block;
+      width: 424px;
     }
   }

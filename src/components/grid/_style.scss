@@ -1,14 +1,8 @@
-// PROPORTIONAL GRIDS
-// Based on http://builtbyboon.com/posed/Proportional-Grids/
-
-// SETTINGS
-// Can be overridden by project-specific settings
-
-// this is the fixed gutter between columns
+// Gutter between columns
 $grid-gutter: 20px !default;
 $oldie-grid-gutter: 2% !default;
 
-// this sets your class names
+// Class names
 $namespace: "grid" !default;
 $grid-wrap-class: "-wrap";
 $grid-col-class: "-col";
@@ -17,9 +11,6 @@ $grid-col-class: "-col";
 // See _settings.scss for the full grid config - this file only ships with halves
 $grid-columns: full-width 1, one-half 1/2!default;
 
-//-------------------------------------------------------
-// GRID MIXINS
-//-------------------------------------------------------
 @mixin set-gutter($gutter) {
 
   margin-left: -$gutter;
@@ -42,11 +33,11 @@ $grid-columns: full-width 1, one-half 1/2!default;
 
   .#{$namespace}#{$grid-col-class} {
     float: left;
-    clear: none; // @TODO: Necessary?
-    padding-left: $grid-gutter; // the gutter between columns
+    padding-left: $grid-gutter;
     width: 100%;
     box-sizing: border-box;
     position: relative; // for push/pull
+    min-height: 1px;  // Stop empty columns from collapsing
 
     .lt-ie8 & {
       padding-left: $oldie-grid-gutter;
@@ -68,19 +59,6 @@ $grid-columns: full-width 1, one-half 1/2!default;
   .reset-gutter {
     @include set-gutter($grid-gutter);
   }
-
-  // reset for list grids
-  ul.#{$namespace}#{$grid-wrap-class},
-  ol.#{$namespace}#{$grid-wrap-class} {
-    padding-left: 0;
-    list-style: none;
-  }
-
-  li.#{$namespace}#{$grid-col-class} {
-    margin-left: 0;
-    margin-bottom: 0;
-  }
-
 }
 
 // create all grid classes for a given proportion

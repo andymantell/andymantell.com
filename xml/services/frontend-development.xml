@@ -1,5 +1,8 @@
 <service name="frontend-development" title="Frontend development" status="published" weighting="0">
   <description>
-    <p>This is a description of the frontend development service</p>
+    <p>This is a description of the frontend development service. This is a description of the frontend development service. This is a description of the frontend development service. This is a description of the frontend development service. This is a description of the frontend development service.</p>
   </description>
+  <images>
+    <image teaser="teaser" src="/images/300x200.gif" />
+  </images>
 </service>

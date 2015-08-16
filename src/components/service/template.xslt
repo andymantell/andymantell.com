@@ -11,9 +11,14 @@
   <!-- Service teasers -->
   <!-- ===================================================================== -->
   <xsl:template match="service" mode="teaser">
-    <article class="teaser">
-       <h3><xsl:value-of select="@title" /></h3>
-       <xsl:copy-of select="./description" />
+    <article class="teaser media">
+      <div class="media__item">
+        <xsl:apply-templates select="images/image[@teaser]" />
+      </div>
+      <div class="media__content">
+        <h3><xsl:value-of select="@title" /></h3>
+        <xsl:copy-of select="./description" />
+      </div>
     </article>
   </xsl:template>
 
