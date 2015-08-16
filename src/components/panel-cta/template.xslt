@@ -44,7 +44,7 @@
   </xsl:template>
 
   <xsl:template name="cta-availability">
-    <p>Available for contracts January 2015 onwards</p>
+    <p>Available for contracts September 2015 onwards</p>
   </xsl:template>
 
 </xsl:stylesheet>
