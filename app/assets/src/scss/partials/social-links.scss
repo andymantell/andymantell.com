@@ -1,0 +1,15 @@
+.social-links {
+  > li {
+    display: inline;
+    margin-right: 20px;
+
+    &::after {
+      content: '|';
+      margin-left: 20px;
+    }
+
+    &:last-child::after {
+      content: '';
+    }
+  }
+}

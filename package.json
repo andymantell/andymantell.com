@@ -4,6 +4,8 @@
   "description": "andymantell.com",
   "main": "index.html",
   "scripts": {
+    "build": "gulp clean && gulp copy && gulp build",
+    "dev": "npm run build && gulp watch"
   },
   "repository": {
     "type": "git",
@@ -14,5 +16,23 @@
   "bugs": {
     "url": "https://github.com/andymantell/andymantell.com/issues"
   },
-  "homepage": "https://github.com/andymantell/andymantell.com#readme"
+  "homepage": "https://github.com/andymantell/andymantell.com#readme",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.23.6",
+    "cssnano": "^3.10.0",
+    "del": "^3.0.0",
+    "eslint": "^4.16.0",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^7.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sass-lint": "^1.3.4",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-standard": "^10.1.1",
+    "gulp-uglify": "^3.0.0",
+    "webpack": "^3.10.0"
+  }
 }
