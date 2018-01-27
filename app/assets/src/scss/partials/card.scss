@@ -1,4 +1,22 @@
 .card {
   min-height: 70vh;
-  padding-top: 10vh;
+  padding: 5vh;
+
+  @media (min-width: 600px) {
+    padding: 10vh;
+  }
+
+  @media (min-width: 750px) {
+    padding-left: 15vw;
+    margin-right: 15vw;
+  }
+
+  @media (min-width: 1500px) {
+    padding-left: 25vw;
+    margin-right: 25vw;
+  }
+
+  &:nth-child(2n) {
+    background: #eee;
+  }
 }
