@@ -10,9 +10,9 @@ module.exports = function (gulp, config) {
 
     browserSync.init({
       port: 3000,
-      server: 'app',
+      server: './',
       open: false,
-      files: ['app/dist', 'app/index.html']
+      files: ['dist', 'src/index.html']
     })
 
     console.log('Watching...')
