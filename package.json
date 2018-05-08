@@ -6,7 +6,7 @@
   "scripts": {
     "build": "gulp clean && gulp copy && gulp build",
     "dev": "npm run build && gulp watch",
-    "deploy": "npm run build && gh-pages -d app"
+    "deploy": "npm run build && cp src/index.html dist && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
