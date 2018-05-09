@@ -6,6 +6,7 @@ andymantell.com
 - Image optimisation
 - Inline css?
 - Redirection for andymantell.co.uk and andymantell.uk
-- CV
+- PDF version of CV
 - Contact section
 - Portfolio
+- Icons by the social links?
