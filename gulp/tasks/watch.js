@@ -22,7 +22,7 @@ module.exports = (gulp, config) => {
     })
   })
 
-  gulp.task('watch', gulp.parallel(['build', 'sassWatch', function() {
+  gulp.task('watch', gulp.parallel(['build', 'sassWatch', () => {
     browserSync.init({
       port: 3000,
       server: {
