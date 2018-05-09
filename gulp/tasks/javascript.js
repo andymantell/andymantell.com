@@ -1,64 +1,45 @@
-var glob = require('glob')
-var path = require('path')
-var webpack = require('webpack')
-var uglify = require('gulp-uglify')
-var rename = require('gulp-rename')
+const path = require('path')
+const spawn = require('child_process').spawn
 
-module.exports = function (gulp, config) {
-  gulp.task('js', function () {
-    var promises = []
+module.exports = (gulp, config) => {
+  gulp.task('jquery', () =>
+    gulp
+      .src(require.resolve('jquery/dist/jquery.min.js'))
+      .pipe(gulp.dest(path.join(config.destinationPath, 'javascripts')))
+  )
 
-    // Loop over all our entrypoints
-    var entrypoints = glob.sync(path.join(config.sourcePath, 'js/*.js'))
+  gulp.task('js-vendor', () =>
+    gulp
+      .src(path.join(config.sourcePath, 'javascripts/vendor/*'))
+      .pipe(gulp.dest(path.join(config.destinationPath, 'javascripts/vendor')))
+  )
 
-    if (!entrypoints) {
-      return
+  gulp.task('js-standalone', () =>
+    gulp
+      .src(path.join(config.sourcePath, 'javascripts/standalone/*'))
+      .pipe(gulp.dest(path.join(config.destinationPath, 'javascripts/standalone')))
+  )
+
+  gulp.task('js', () => {
+    var webpackArgs
+
+    if (process.argv.includes('watch')) {
+      webpackArgs = ['--watch', '--info-verbosity', 'verbose']
+    } else {
+      // If we're not running in dev mode, make webpack be quiet
+      webpackArgs = ['--display', 'errors-only']
     }
 
-    entrypoints.forEach(function (entrypoint) {
-      var name = path.basename(entrypoint)
-      var outputFilename = path.relative(__dirname, path.join(config.destinationPath, 'js', name))
+    const webpack = spawn('webpack', webpackArgs)
 
-      promises.push(new Promise(function (resolve, reject) {
-        webpack({
-          entry: path.relative(__dirname, entrypoint),
-          output: {
-            filename: name,
-            path: path.resolve(path.join(config.destinationPath, 'js'))
-          },
-          module: {
-            loaders: [
-              {
-                test: /\.js$/,
-                loader: 'babel-loader',
-                query: {
-                  presets: [
-                    [
-                      'env'
-                    ]
-                  ]
-                }
-              }
-            ]
-          }
-        },
-        function (err, stats) {
-          if (err) {
-            return reject(err)
-          }
-          resolve(outputFilename)
-        })
-      }))
+    webpack.stdout.on('data', data => {
+      console.log(data.toString())
     })
 
-    // Uglify used directly rather than as part of webpack so that we can generate minified files as well as keeping the originals
-    var minify = function (outputs) {
-      return gulp.src(outputs)
-        .pipe(uglify())
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest(path.join(config.destinationPath, 'js')))
-    }
+    webpack.stderr.on('data', data => {
+      console.log(data.toString())
+    })
 
-    return Promise.all(promises).then(minify)
+    return webpack
   })
 }

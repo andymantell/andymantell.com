@@ -1,13 +1,28 @@
-var path = require('path')
-
 var browserSync = require('../utils/browsersync')
 
-module.exports = function (gulp, config) {
-  gulp.task('watch', function () {
-    gulp.watch(path.join(config.sourcePath, 'scss/**/*.scss'), ['sass', 'sass-lint'])
-    gulp.watch(path.join(config.sourcePath, 'js/**/*.js'), ['js', 'standardjs'])
-    gulp.watch('gulp/**/*.js', ['standardjs'])
+module.exports = (gulp, config) => {
+  const watchConfig = {
+    cwd: config.sourcePath,
+    usePolling: true
+  }
 
+  gulp.task('sassWatch', () => {
+    const watcher = gulp.watch('scss/**/*.scss', watchConfig, gulp.series(['sass']))
+
+    watcher.on('change', (path, stats) => {
+      console.log(path + ' changed')
+    })
+
+    watcher.on('add', path => {
+      console.log(path + ' added')
+    })
+
+    watcher.on('unlink', path => {
+      console.log(path + ' removed')
+    })
+  })
+
+  gulp.task('watch', gulp.parallel(['build', 'sassWatch', function() {
     browserSync.init({
       port: 3000,
       server: {
@@ -17,7 +32,5 @@ module.exports = function (gulp, config) {
       open: false,
       files: ['dist', 'src/index.html']
     })
-
-    console.log('Watching...')
-  })
+  }]))
 }

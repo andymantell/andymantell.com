@@ -1,14 +1,11 @@
-var glob = require('glob')
-var gulp = require('gulp')
+const gulp = require('gulp')
 
-var config = {
-  'applicationPath': './src',     // Path on disk to the main application folder
-  'sourcePath': './src',         // Path where the assets are located
-  'destinationPath': './dist',         // Path where the built assets should be written
-  'sassPath': 'scss/*.scss'  // Path to the sass within the sourcePath
-}
+const config = require('./gulp/config.js')
 
-var tasks = glob.sync('./gulp/tasks/**/*.js')
-tasks.forEach(function (task) {
-  require(task)(gulp, config)
-})
+require('./gulp/tasks/clean.js')(gulp, config)
+require('./gulp/tasks/images.js')(gulp, config)
+require('./gulp/tasks/javascript.js')(gulp, config)
+require('./gulp/tasks/linting.js')(gulp, config)
+require('./gulp/tasks/sass.js')(gulp, config)
+require('./gulp/tasks/default.js')(gulp, config)
+require('./gulp/tasks/watch.js')(gulp, config)
