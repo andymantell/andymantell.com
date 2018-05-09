@@ -12,11 +12,47 @@
   }
 
   @media (min-width: 1500px) {
-    padding-left: 25vw;
-    margin-right: 25vw;
+    padding-left: 20vw;
+    margin-right: 20vw;
   }
 
   &:nth-child(2n) {
-    background: #eee;
+    background: #dcdcdc;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: #fff;
+      position: absolute;
+      top: 1px;
+      left: 0;
+    }
+  }
+}
+
+.card__image {
+  background-color: #fff;
+  padding: 15px;
+  max-width: 300px;
+  box-shadow: 0 10px 15px #ccc;
+  transform: rotate(3deg);
+  font-family: monospace;
+  font-size: 14px;
+
+  @media (min-width: 1000px) {
+    margin-left: 20px;
+    float: right;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  p {
+    margin: 10px 0 0 0;
   }
 }

@@ -1,0 +1,21 @@
+.hero {
+  @media (min-width: 750px) {
+    display: grid;
+    grid-template-columns: auto 250px;
+    grid-template-areas: 'main image';
+    grid-column-gap: 50px;
+  }
+}
+
+.hero__item {
+  grid-area: main;
+}
+
+.hero__item--image {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 500px;
+  margin: 0 auto 50px auto;
+  display: block;
+  grid-area: image;
+}
