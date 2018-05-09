@@ -10,8 +10,6 @@ jsEntryPoints = jsEntryPoints.reduce((accumulator, value) => {
   return accumulator
 }, {})
 
-console.log(jsEntryPoints)
-
 module.exports = {
   mode: 'production',
   bail: true,
