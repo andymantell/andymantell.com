@@ -19,13 +19,13 @@
   },
   "homepage": "https://github.com/andymantell/andymantell.com#readme",
   "dependencies": {
-    "gulp-imagemin": "^4.1.0"
+    "gulp-imagemin": "^9.2.0"
   },
   "devDependencies": {
     "browser-sync": "^3.0.4",
     "del": "^3.0.0",
     "gh-pages": "^5.0.0",
-    "semver": "^5.5.0",
+    "semver": "^5.7.2",
     "gulp": "^4.0.0",
     "autoprefixer": "^8.4.1",
     "babel-core": "^6.26.3",
